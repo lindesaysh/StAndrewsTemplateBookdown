@@ -2,6 +2,8 @@
 
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
 
+## Figures and Tables
+
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
 ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
@@ -11,6 +13,23 @@ plot(pressure, type = 'b', pch = 19)
 
 Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
 
+You can also do a text reference for a figure which is useful if you want special characters;
+
+(ref:myfig) Define a text reference **here** with some math symbols like $\theta$. 
+
+```{r nice-fig2, fig.cap='(ref:myfig)', out.width='80%', fig.asp=.75, fig.align='center'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19, col=2)
+```
+
+Here i am referencing \@ref(fig:nice-fig2).
+
+```{r out.width='50%', fig.show='hold'}
+par(mar = c(4, 4, .1, .1))
+plot(pressure, pch = 19, type = 'b')
+plot(cars, pch = 19)
+```
+
 ```{r nice-tab, tidy=FALSE}
 knitr::kable(
   head(iris, 20), caption = 'Here is a nice table!',
@@ -18,4 +37,50 @@ knitr::kable(
 )
 ```
 
+Reference this table using Table \@ref(tab:nice-tab)
+
 You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+
+## Equations:
+
+\begin{equation} 
+  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
+  (\#eq:binom)
+\end{equation} 
+
+You may refer to it using \@ref(eq:binom), e.g., see Equation (2.1).
+
+Please make sure equations \index{equations} without labels are not numbered by either using the equation* environment or adding \nonumber or \notag to your equations. The same rules apply to other math environments, such as eqnarray, gather, align, and so on (e.g., you can use the align* environment).
+
+\begin{align} 
+g(X_{n}) & = g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
+\sqrt{n}[g(X_{n})-g(\theta)] & = g'\left({\tilde{\theta}}\right) 
+\sqrt{n}[X_{n}-\theta](\#eq:align) \\
+\end{align} 
+
+use split to have multiple lines with one equation reference
+
+\begin{equation} 
+\begin{split}
+\mathrm{Var}(\hat{\beta}) & =\mathrm{Var}((X'X)^{-1}X'y)\\
+ & =(X'X)^{-1}X'\mathrm{Var}(y)((X'X)^{-1}X')'\\
+ & =(X'X)^{-1}X'\mathrm{Var}(y)X(X'X)^{-1}\\
+ & =(X'X)^{-1}X'\sigma^{2}IX(X'X)^{-1}\\
+ & =(X'X)^{-1}\sigma^{2}
+\end{split}
+(\#eq:var-beta)
+\end{equation} 
+
+there are also 'example' and 'exercise' environments (labelled with exm and exr respectively)
+
+```{example, eg1, name='how to do an example'}
+for this example, we show nothing 
+```
+
+
+```{example, eg2, name='how to do a second example'}
+for this example, we show something
+```
+
+these environments can be changed using the css file
+CSS class being the environment name, e.g., `<div class="lemma"></div>`
