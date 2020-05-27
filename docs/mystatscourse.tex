@@ -135,65 +135,64 @@
   }%
 \fi
 
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-% % latex macro to create task boxes
-% \usepackage{tcolorbox}
-% \tcbuselibrary{breakable}
-%
-% \definecolor{taskCol}{HTML}{007dc5}
-% \definecolor{taskCol1}{HTML}{00aeef}
-%
-% % 404040
-% % 808080
-%
-% \tcbset{colback=white,colframe=taskCol,arc=0mm}
-%
-% %trick to fool markdown into compiling
-% \newcommand{\bblockT}[2][Task]{\begin{tcolorbox}[title = #1 #2, parbox = false]}
-% \newcommand{\eblockT}{\end{tcolorbox}}
-% \newcommand{\bblockS}[2][Solution]{\begin{tcolorbox}[title = #1 #2, colframe=taskCol1, breakable, parbox = false]}
-% \newcommand{\eblockS}{\end{tcolorbox}}
-%
-% %add tabbed solutions environment
-% \newcommand{\bmp}{\begin{minipage}[c]{0.5\textwidth}}
-% \newcommand{\emp}{\end{minipage}}
-% \newcommand{\bblockST}[1]{\begin{tcolorbox}[title = #1, colframe=taskCol1, breakable, parbox = false]}
-% \newcommand{\eblockST}{\end{tcolorbox}}
-%
-% %set solution button link
-% \usepackage{tikz}
-%
-% \newcommand{\buttonT}[1]{
-%     \begin{tikzpicture}
-%     \node[
-%         inner sep=5pt,
-%         draw=taskCol,
-%         fill=taskCol,
-%         rounded corners=2pt,
-%         text=white
-%     ] (c1) {#1};
-%     \end{tikzpicture}
-% }
-%
-% \newcommand{\buttonS}[1]{
-%     \begin{tikzpicture}
-%     \node[
-%         inner sep=5pt,
-%         draw=taskCol1,
-%         fill=taskCol1,
-%         rounded corners=2pt,
-%         text=white
-%     ] (c1) {#1};
-%     \end{tikzpicture}
-% }
-%
-% \newcommand{\colpageref}[1]{\hypersetup{linkcolor=white}\pageref{#1}}
+% latex macro to create task boxes
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+
+\definecolor{taskCol}{HTML}{404040}
+\definecolor{taskCol1}{HTML}{808080}
+
+\tcbset{colback=white,colframe=taskCol,arc=0mm}
+
+%trick to fool markdown into compiling
+\newcommand{\bblockT}[2][Task]{\begin{tcolorbox}[title = #1 #2, parbox = false]}
+\newcommand{\eblockT}{\end{tcolorbox}}
+\newcommand{\bblockS}[2][Solution]{\begin{tcolorbox}[title = #1 #2, colframe=taskCol1, breakable, parbox = false]}
+\newcommand{\eblockS}{\end{tcolorbox}}
+
+%add tabbed solutions environment
+\newcommand{\bmp}{\begin{minipage}[c]{0.5\textwidth}}
+\newcommand{\emp}{\end{minipage}}
+\newcommand{\bblockST}[1]{\begin{tcolorbox}[title = #1, colframe=taskCol1, breakable, parbox = false]}
+\newcommand{\eblockST}{\end{tcolorbox}}
+
+%set solution button link
+\usepackage{tikz}
+
+\newcommand{\buttonT}[1]{
+    \begin{tikzpicture}
+    \node[
+        inner sep=5pt,
+        draw=taskCol,
+        fill=taskCol,
+        rounded corners=2pt,
+        text=white
+    ] (c1) {#1};
+    \end{tikzpicture}
+}
+
+\newcommand{\buttonS}[1]{
+    \begin{tikzpicture}
+    \node[
+        inner sep=5pt,
+        draw=taskCol1,
+        fill=taskCol1,
+        rounded corners=2pt,
+        text=white
+    ] (c1) {#1};
+    \end{tikzpicture}
+}
+
+\newcommand{\colpageref}[1]{\hypersetup{linkcolor=white}\pageref{#1}}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
 \title{An introduction to Statistical Modelling using GLMs}
 \author{Lindesay Scott-Hayward}
-\date{2020-05-25}
+\date{27 May 2020}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -217,8 +216,61 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{course-information}{%
-\chapter{Course Information}\label{course-information}}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+An introductory -workshop to the field of statistical modelling in R. The focus will be on how to fit statistical models in R, rather than on the rigorous underlying mathematics. The target audience is anyone who wants to learn how to fit linear models in R. The progression will be linear models, generalised linear models and linear mixed effects models.
+
+\hypertarget{prerequisites}{%
+\section*{Prerequisites}\label{prerequisites}}
+\addcontentsline{toc}{section}{Prerequisites}
+
+\begin{itemize}
+\tightlist
+\item
+  Programming basics in R
+\end{itemize}
+
+\hypertarget{learning-outcomes}{%
+\section*{Learning outcomes}\label{learning-outcomes}}
+\addcontentsline{toc}{section}{Learning outcomes}
+
+\begin{itemize}
+\tightlist
+\item
+  Understand the key concepts and terminology used in statistical modelling
+\item
+  Use R to fit linear, generalised linear and mixed effect models in R
+\item
+  Recognise practical issues with fitting these models
+\item
+  Checking model fit
+\item
+  Perform model comparisons
+\end{itemize}
+
+\hypertarget{recommended-reading}{%
+\section*{Recommended reading}\label{recommended-reading}}
+\addcontentsline{toc}{section}{Recommended reading}
+
+I highly recommend the following books:
+* \href{https://www.wiley.com/en-gb/Statistics\%3A+An+Introduction+using+R-p-9780470022986}{Statistics: An Introduction using R}
+* \href{https://www.crcpress.com/Linear-Models-with-R/Faraway/p/book/9781439887332}{Linear models with R}
+* \href{http://www.stat.columbia.edu/~gelman/arm/}{Data Analysis Using Regression and Multilevel/Hierarchical Models}
+* \href{http://www-bcf.usc.edu/~gareth/ISL/}{An Introduction to Statistical Learning}
+* \href{https://www.springer.com/gb/book/9780387874579}{Mixed Effects Models and Extensions in Ecology with R}
+* \href{https://www.amazon.co.uk/Extending-Linear-Model-Generalized-Nonparametric/dp/158488424X}{Extending the Linear Model with R}
+
+\hypertarget{data-files}{%
+\section*{Data files}\label{data-files}}
+\addcontentsline{toc}{section}{Data files}
+
+All data files can be downloaded as a ZIP file from \href{https://exeter-data-analytics.github.io/StatModelling/dataFiles.zip}{here}.
+
+\hypertarget{acknowledgements}{%
+\section*{Acknowledgements}\label{acknowledgements}}
+\addcontentsline{toc}{section}{Acknowledgements}
 
 This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
 
@@ -294,7 +346,7 @@ Here i am referencing \ref{fig:nice-fig2}.
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=0.5\linewidth]{mystatscourse_files/figure-latex/unnamed-chunk-3-1} \includegraphics[width=0.5\linewidth]{mystatscourse_files/figure-latex/unnamed-chunk-3-2}
+\begin{center}\includegraphics[width=0.5\linewidth]{mystatscourse_files/figure-latex/unnamed-chunk-4-1} \includegraphics[width=0.5\linewidth]{mystatscourse_files/figure-latex/unnamed-chunk-4-2} \end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -407,12 +459,31 @@ And you can add words to the index such as GLM \index{GLM}
 \hypertarget{shiny-app}{%
 \section{Shiny app}\label{shiny-app}}
 
-\href{https://lindesaysh.shinyapps.io/mt1007_week22/}{\includegraphics{mystatscourse_files/figure-latex/myshiny-1.pdf}}
+\hypertarget{type-1---calling-from-shinyapps.io}{%
+\subsection{type 1 - calling from shinyapps.io}\label{type-1---calling-from-shinyapps.io}}
+
+\begin{figure}
+
+{\centering \href{https://lindesaysh.shinyapps.io/mt1007_week22/}{\includegraphics{mystatscourse_files/figure-latex/myshiny-1} }
+
+}
+
+\caption{An eaxmple of a shiny app. you can see a live version at (put url here)}\label{fig:myshiny}
+\end{figure}
 
 you can use a shiny app embedded in the notes Figure \ref{fig:myshiny}.
 
+\hypertarget{type-3---creating-inline}{%
+\subsection{type 3 - creating inline}\label{type-3---creating-inline}}
+
 \hypertarget{applications}{%
 \chapter{Applications}\label{applications}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
 
 Some \emph{significant} applications are demonstrated in this chapter.
 
@@ -421,6 +492,18 @@ Some \emph{significant} applications are demonstrated in this chapter.
 
 \hypertarget{example-two}{%
 \section{Example two}\label{example-two}}
+
+\begin{quote}
+\textbf{Aside}: using the model to predict outside of the range of the observed data is called \textbf{extrapolating}. Oftentimes, statistical models are developed \emph{in order} to be used to extrapolate (e.g.~climate modelling). This is however, dangerous, as we can only assess the assumptions of the model over the range of the observed data. When extrapolating we have to assume that these relationships hold beyond the range of the data, which may or may not be reasonable (hence why weather forecast over short-time periods are OK, but climate forecasts are much more uncertain). Hence, we should always view the model as an approximation of the data generating process. In this particualr case, the interpretation of the parameters is not sensible when \(x = 0\) (weight = 0 kg), but makes sense in the range that we are interested in exploring. If the case where \(x = 0\) is important, then we would have to change the model to ensure that the predictions made sense at those values of \(x\).
+\end{quote}
+
+\hypertarget{tsk1}{}\bblockT[Task]{\phantomsection\label{sol1}1}
+
+Produce a scatterplot of \texttt{mpg} against \texttt{hp}. What does the relationship look like?
+
+\eblockT
+
+\hyperlink{sol1}{\buttonS{Show Solution on P\colpageref{tsk1}}}
 
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}
@@ -442,8 +525,27 @@ output:
 \appendix}
 
 
-\hypertarget{first-appendix}{%
-\chapter{first appendix}\label{first-appendix}}
+\hypertarget{answers}{%
+\chapter{Answers}\label{answers}}
+
+\hypertarget{sol1}{}
+\bblockS[Solution]{\phantomsection\label{tsk1}1}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(hp }\OperatorTok{~}\StringTok{ }\NormalTok{mpg, }\DataTypeTok{data =}\NormalTok{ mtcars, }
+  \DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{col=}\StringTok{'darkgrey'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{mystatscourse_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+This is my solution
+
+\vspace{\baselineskip}
+
+\hyperlink{tsk1}{\buttonT{Return to task on P\colpageref{sol1}}}
+\eblockS
 
   \bibliography{book.bib,packages.bib}
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1 Shiny app | An introduction to Statistical Modelling using GLMs</title>
+  <title>3.1 Shiny app | An introduction to Statistical Modelling using GLMs</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1 Shiny app | An introduction to Statistical Modelling using GLMs" />
+  <meta property="og:title" content="3.1 Shiny app | An introduction to Statistical Modelling using GLMs" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="lindesaysh/StatmodellingGitBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1 Shiny app | An introduction to Statistical Modelling using GLMs" />
+  <meta name="twitter:title" content="3.1 Shiny app | An introduction to Statistical Modelling using GLMs" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Lindesay Scott-Hayward" />
 
 
-<meta name="date" content="2020-05-25" />
+<meta name="date" content="2020-05-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,46 @@
 
 
 
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 <style type="text/css">
@@ -130,22 +170,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="figures-and-tables.html"><a href="figures-and-tables.html"><i class="fa fa-check"></i><b>2.1</b> Figures and Tables</a></li>
-<li class="chapter" data-level="2.2" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i><b>2.2</b> Equations:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="learning-outcomes.html"><a href="learning-outcomes.html"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="recommended-reading.html"><a href="recommended-reading.html"><i class="fa fa-check"></i>Recommended reading</a></li>
+<li class="chapter" data-level="" data-path="data-files.html"><a href="data-files.html"><i class="fa fa-check"></i>Data files</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
-<li class="chapter" data-level="4.1" data-path="shiny-app.html"><a href="shiny-app.html"><i class="fa fa-check"></i><b>4.1</b> Shiny app</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="figures-and-tables.html"><a href="figures-and-tables.html"><i class="fa fa-check"></i><b>1.1</b> Figures and Tables</a></li>
+<li class="chapter" data-level="1.2" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i><b>1.2</b> Equations:</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny-app.html"><a href="shiny-app.html"><i class="fa fa-check"></i><b>3.1</b> Shiny app</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="shiny-app.html"><a href="shiny-app.html#type-1---calling-from-shinyapps.io"><i class="fa fa-check"></i><b>3.1.1</b> type 1 - calling from shinyapps.io</a></li>
+<li class="chapter" data-level="3.1.2" data-path="shiny-app.html"><a href="shiny-app.html#type-3---creating-inline"><i class="fa fa-check"></i><b>3.1.2</b> type 3 - creating inline</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="first-appendix.html"><a href="first-appendix.html"><i class="fa fa-check"></i><b>A</b> first appendix</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
+<li class="chapter" data-level="4.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -168,16 +215,36 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="shiny-app" class="section level2">
-<h2><span class="header-section-number">4.1</span> Shiny app</h2>
-<div class="figure"><span id="fig:myshiny"></span>
-<iframe src="https://lindesaysh.shinyapps.io/mt1007_week22/?showcase=0" width="672" height="600px">
+<h2><span class="header-section-number">3.1</span> Shiny app</h2>
+<div id="type-1---calling-from-shinyapps.io" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> type 1 - calling from shinyapps.io</h3>
+<div class="figure" style="text-align: center"><span id="fig:myshiny"></span>
+<iframe src="https://lindesaysh.shinyapps.io/mt1007_week22/?showcase=0" width="480" height="600px">
 </iframe>
 <p class="caption">
-Figure 4.1: An eaxmple of a shiny app. you can see a live version at (put url here)
+Figure 3.1: An eaxmple of a shiny app. you can see a live version at (put url here)
 </p>
 </div>
-<p>you can use a shiny app embedded in the notes Figure <a href="shiny-app.html#fig:myshiny">4.1</a>.</p>
+<p>you can use a shiny app embedded in the notes Figure <a href="shiny-app.html#fig:myshiny">3.1</a>.</p>
+</div>
+<div id="type-3---creating-inline" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> type 3 - creating inline</h3>
+<!-- ```{r eruptions, echo=FALSE} -->
+<!-- selectInput( -->
+<!--   'breaks', label = 'Number of bins:', -->
+<!--   choices = c(10, 20, 35, 50), selected = 20 -->
+<!-- ) -->
+<!-- renderPlot({ -->
+<!--   par(mar = c(4, 4, .1, .5)) -->
+<!--   hist( -->
+<!--     faithful$eruptions, as.numeric(input$breaks), -->
+<!--     col = 'gray', border = 'white', -->
+<!--     xlab = 'Duration (minutes)', main = '' -->
+<!--   ) -->
+<!-- }) -->
+<!-- ``` -->
 
+</div>
 </div>
 <!-- </div> -->
             </section>
@@ -203,7 +270,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": null,
 "fontsettings": {
-"theme": "Sepia",
+"theme": "white",
 "family": "sans",
 "size": 2
 },

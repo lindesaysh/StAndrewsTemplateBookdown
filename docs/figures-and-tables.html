@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.1 Figures and Tables | An introduction to Statistical Modelling using GLMs</title>
+  <title>1.1 Figures and Tables | An introduction to Statistical Modelling using GLMs</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.1 Figures and Tables | An introduction to Statistical Modelling using GLMs" />
+  <meta property="og:title" content="1.1 Figures and Tables | An introduction to Statistical Modelling using GLMs" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="lindesaysh/StatmodellingGitBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.1 Figures and Tables | An introduction to Statistical Modelling using GLMs" />
+  <meta name="twitter:title" content="1.1 Figures and Tables | An introduction to Statistical Modelling using GLMs" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Lindesay Scott-Hayward" />
 
 
-<meta name="date" content="2020-05-25" />
+<meta name="date" content="2020-05-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,46 @@
 
 
 
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 <style type="text/css">
@@ -130,22 +170,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="figures-and-tables.html"><a href="figures-and-tables.html"><i class="fa fa-check"></i><b>2.1</b> Figures and Tables</a></li>
-<li class="chapter" data-level="2.2" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i><b>2.2</b> Equations:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="learning-outcomes.html"><a href="learning-outcomes.html"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="recommended-reading.html"><a href="recommended-reading.html"><i class="fa fa-check"></i>Recommended reading</a></li>
+<li class="chapter" data-level="" data-path="data-files.html"><a href="data-files.html"><i class="fa fa-check"></i>Data files</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
-<li class="chapter" data-level="4.1" data-path="shiny-app.html"><a href="shiny-app.html"><i class="fa fa-check"></i><b>4.1</b> Shiny app</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="figures-and-tables.html"><a href="figures-and-tables.html"><i class="fa fa-check"></i><b>1.1</b> Figures and Tables</a></li>
+<li class="chapter" data-level="1.2" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i><b>1.2</b> Equations:</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny-app.html"><a href="shiny-app.html"><i class="fa fa-check"></i><b>3.1</b> Shiny app</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="shiny-app.html"><a href="shiny-app.html#type-1---calling-from-shinyapps.io"><i class="fa fa-check"></i><b>3.1.1</b> type 1 - calling from shinyapps.io</a></li>
+<li class="chapter" data-level="3.1.2" data-path="shiny-app.html"><a href="shiny-app.html#type-3---creating-inline"><i class="fa fa-check"></i><b>3.1.2</b> type 3 - creating inline</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="first-appendix.html"><a href="first-appendix.html"><i class="fa fa-check"></i><b>A</b> first appendix</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
+<li class="chapter" data-level="4.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -168,17 +215,17 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="figures-and-tables" class="section level2">
-<h2><span class="header-section-number">2.1</span> Figures and Tables</h2>
+<h2><span class="header-section-number">1.1</span> Figures and Tables</h2>
 <p>Figures and tables with captions will be placed in <code>figure</code> and <code>table</code> environments, respectively.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="kw">plot</span>(pressure, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>, <span class="dt">pch =</span> <span class="dv">19</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:nice-fig"></span>
 <img src="mystatscourse_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
 <p class="caption">
-Figure 2.1: Here is a nice figure!
+Figure 1.1: Here is a nice figure!
 </p>
 </div>
-<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="figures-and-tables.html#fig:nice-fig">2.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="figures-and-tables.html#tab:nice-tab">2.1</a>.</p>
+<p>Reference a figure by its code chunk label with the <code>fig:</code> prefix, e.g., see Figure <a href="figures-and-tables.html#fig:nice-fig">1.1</a>. Similarly, you can reference tables generated from <code>knitr::kable()</code>, e.g., see Table <a href="figures-and-tables.html#tab:nice-tab">1.1</a>.</p>
 <p>You can also do a text reference for a figure which is useful if you want special characters;</p>
 
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
@@ -186,20 +233,20 @@ Figure 2.1: Here is a nice figure!
 <div class="figure" style="text-align: center"><span id="fig:nice-fig2"></span>
 <img src="mystatscourse_files/figure-html/nice-fig2-1.png" alt="Define a text reference here with some math symbols like \(\theta\)." width="80%" />
 <p class="caption">
-Figure 2.2: Define a text reference <strong>here</strong> with some math symbols like <span class="math inline">\(\theta\)</span>.
+Figure 1.2: Define a text reference <strong>here</strong> with some math symbols like <span class="math inline">\(\theta\)</span>.
 </p>
 </div>
-<p>Here i am referencing <a href="figures-and-tables.html#fig:nice-fig2">2.2</a>.</p>
+<p>Here i am referencing <a href="figures-and-tables.html#fig:nice-fig2">1.2</a>.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">par</span>(<span class="dt">mar =</span> <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="fl">.1</span>, <span class="fl">.1</span>))</a>
 <a class="sourceLine" id="cb4-2" title="2"><span class="kw">plot</span>(pressure, <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">type =</span> <span class="st">&#39;b&#39;</span>)</a>
 <a class="sourceLine" id="cb4-3" title="3"><span class="kw">plot</span>(cars, <span class="dt">pch =</span> <span class="dv">19</span>)</a></code></pre></div>
-<p><img src="mystatscourse_files/figure-html/unnamed-chunk-3-1.png" width="50%" /><img src="mystatscourse_files/figure-html/unnamed-chunk-3-2.png" width="50%" /></p>
+<p><img src="mystatscourse_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" /><img src="mystatscourse_files/figure-html/unnamed-chunk-4-2.png" width="50%" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
 <a class="sourceLine" id="cb5-2" title="2">  <span class="kw">head</span>(iris, <span class="dv">20</span>), <span class="dt">caption =</span> <span class="st">&#39;Here is a nice table!&#39;</span>,</a>
 <a class="sourceLine" id="cb5-3" title="3">  <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
 <a class="sourceLine" id="cb5-4" title="4">)</a></code></pre></div>
 <table>
-<caption><span id="tab:nice-tab">Table 2.1: </span>Here is a nice table!</caption>
+<caption><span id="tab:nice-tab">Table 1.1: </span>Here is a nice table!</caption>
 <thead>
 <tr class="header">
 <th align="right">Sepal.Length</th>
@@ -352,7 +399,7 @@ Figure 2.2: Define a text reference <strong>here</strong> with some math symbols
 </tr>
 </tbody>
 </table>
-<p>Reference this table using Table <a href="figures-and-tables.html#tab:nice-tab">2.1</a></p>
+<p>Reference this table using Table <a href="figures-and-tables.html#tab:nice-tab">1.1</a></p>
 <p>You can write citations, too. For example, we are using the <strong>bookdown</strong> package <span class="citation">(Xie <a href="#ref-R-bookdown" role="doc-biblioref">2020</a>)</span> in this sample book, which was built on top of R Markdown and <strong>knitr</strong> <span class="citation">(Xie <a href="#ref-xie2015" role="doc-biblioref">2015</a>)</span>.</p>
 </div>
 <h3>References</h3>
@@ -387,7 +434,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": null,
 "fontsettings": {
-"theme": "Sepia",
+"theme": "white",
 "family": "sans",
 "size": 2
 },

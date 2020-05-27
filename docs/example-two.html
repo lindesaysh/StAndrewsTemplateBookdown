@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5.2 Example two | An introduction to Statistical Modelling using GLMs</title>
+  <title>4.2 Example two | An introduction to Statistical Modelling using GLMs</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5.2 Example two | An introduction to Statistical Modelling using GLMs" />
+  <meta property="og:title" content="4.2 Example two | An introduction to Statistical Modelling using GLMs" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="lindesaysh/StatmodellingGitBook" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5.2 Example two | An introduction to Statistical Modelling using GLMs" />
+  <meta name="twitter:title" content="4.2 Example two | An introduction to Statistical Modelling using GLMs" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Lindesay Scott-Hayward" />
 
 
-<meta name="date" content="2020-05-25" />
+<meta name="date" content="2020-05-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,46 @@
 
 
 
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 <style type="text/css">
@@ -130,22 +170,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Course Information</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="figures-and-tables.html"><a href="figures-and-tables.html"><i class="fa fa-check"></i><b>2.1</b> Figures and Tables</a></li>
-<li class="chapter" data-level="2.2" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i><b>2.2</b> Equations:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="learning-outcomes.html"><a href="learning-outcomes.html"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="recommended-reading.html"><a href="recommended-reading.html"><i class="fa fa-check"></i>Recommended reading</a></li>
+<li class="chapter" data-level="" data-path="data-files.html"><a href="data-files.html"><i class="fa fa-check"></i>Data files</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a><ul>
-<li class="chapter" data-level="4.1" data-path="shiny-app.html"><a href="shiny-app.html"><i class="fa fa-check"></i><b>4.1</b> Shiny app</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="figures-and-tables.html"><a href="figures-and-tables.html"><i class="fa fa-check"></i><b>1.1</b> Figures and Tables</a></li>
+<li class="chapter" data-level="1.2" data-path="equations.html"><a href="equations.html"><i class="fa fa-check"></i><b>1.2</b> Equations:</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a><ul>
+<li class="chapter" data-level="3.1" data-path="shiny-app.html"><a href="shiny-app.html"><i class="fa fa-check"></i><b>3.1</b> Shiny app</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="shiny-app.html"><a href="shiny-app.html#type-1---calling-from-shinyapps.io"><i class="fa fa-check"></i><b>3.1.1</b> type 1 - calling from shinyapps.io</a></li>
+<li class="chapter" data-level="3.1.2" data-path="shiny-app.html"><a href="shiny-app.html#type-3---creating-inline"><i class="fa fa-check"></i><b>3.1.2</b> type 3 - creating inline</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="first-appendix.html"><a href="first-appendix.html"><i class="fa fa-check"></i><b>A</b> first appendix</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
+<li class="chapter" data-level="4.1" data-path="example-one.html"><a href="example-one.html"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="example-two.html"><a href="example-two.html"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -168,7 +215,47 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="example-two" class="section level2">
-<h2><span class="header-section-number">5.2</span> Example two</h2>
+<h2><span class="header-section-number">4.2</span> Example two</h2>
+<blockquote>
+<p><strong>Aside</strong>: using the model to predict outside of the range of the observed data is called <strong>extrapolating</strong>. Oftentimes, statistical models are developed <em>in order</em> to be used to extrapolate (e.g. climate modelling). This is however, dangerous, as we can only assess the assumptions of the model over the range of the observed data. When extrapolating we have to assume that these relationships hold beyond the range of the data, which may or may not be reasonable (hence why weather forecast over short-time periods are OK, but climate forecasts are much more uncertain). Hence, we should always view the model as an approximation of the data generating process. In this particualr case, the interpretation of the parameters is not sensible when <span class="math inline">\(x = 0\)</span> (weight = 0 kg), but makes sense in the range that we are interested in exploring. If the case where <span class="math inline">\(x = 0\)</span> is important, then we would have to change the model to ensure that the predictions made sense at those values of <span class="math inline">\(x\)</span>.</p>
+</blockquote>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+Produce a scatterplot of <code>mpg</code> against <code>hp</code>. What does the relationship look like?
+</div>
+</div>
+<button id="displayTextunnamed-chunk-7" onclick="javascript:toggle(&#39;unnamed-chunk-7&#39;);">
+Show Solution
+</button>
+<div id="toggleTextunnamed-chunk-7" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution
+</div>
+<div class="panel-body">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">plot</span>(hp <span class="op">~</span><span class="st"> </span>mpg, <span class="dt">data =</span> mtcars, </a>
+<a class="sourceLine" id="cb7-2" title="2">  <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&#39;darkgrey&#39;</span>)</a></code></pre></div>
+<p><img src="mystatscourse_files/figure-html/unnamed-chunk-9-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p>This is my solution</p>
+</div>
+</div>
+</div>
+<!-- ```{solution, multCode = T, cache = F} -->
+<!-- ``{r, fig.height=6, fig.width=6, out.width = "60%"} -->
+<!-- plot(hp ~ mpg, data = mtcars,  -->
+<!--      pch=19, col='darkgrey') -->
+<!-- `` -->
+<!-- The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R. -->
+<!-- #### -->
+<!-- ``{r, fig.height=6, fig.width=6} -->
+<!-- ggplot(mtcars) +  -->
+<!--     geom_point(aes(x = mpg, y = hp)) -->
+<!-- ``  -->
+<!-- The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R. -->
+<!-- ``` -->
 
 </div>
 <!-- </div> -->
@@ -195,7 +282,7 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": null,
 "fontsettings": {
-"theme": "Sepia",
+"theme": "white",
 "family": "sans",
 "size": 2
 },
