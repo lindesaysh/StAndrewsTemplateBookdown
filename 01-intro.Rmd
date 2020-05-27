@@ -74,13 +74,19 @@ use split to have multiple lines with one equation reference
 there are also 'example' and 'exercise' environments (labelled with exm and exr respectively)
 
 ```{example, eg1, name='how to do an example'}
+
 for this example, we show nothing 
+
 ```
+
 
 
 ```{example, eg2, name='how to do a second example'}
+
 for this example, we show something
+
 ```
 
-these environments can be changed using the css file
-CSS class being the environment name, e.g., `<div class="lemma"></div>`
+
+These environments can be changed using the css file CSS class being the environment name, e.g., `<div class="lemma"></div>`
+

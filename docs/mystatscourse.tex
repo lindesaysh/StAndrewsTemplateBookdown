@@ -142,8 +142,8 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
 
-\definecolor{taskCol}{HTML}{404040}
-\definecolor{taskCol1}{HTML}{808080}
+\definecolor{taskCol}{HTML}{00539b}
+\definecolor{taskCol1}{HTML}{007870}
 
 \tcbset{colback=white,colframe=taskCol,arc=0mm}
 
@@ -505,6 +505,14 @@ Produce a scatterplot of \texttt{mpg} against \texttt{hp}. What does the relatio
 
 \hyperlink{sol1}{\buttonS{Show Solution on P\colpageref{tsk1}}}
 
+\hypertarget{tsk2}{}\bblockT[Task]{\phantomsection\label{sol2}2}
+
+This is another task with multi solution
+
+\eblockT
+
+\hyperlink{sol2}{\buttonS{Show Solution on P\colpageref{tsk2}}}
+
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}
 
@@ -538,13 +546,52 @@ output:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics{mystatscourse_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics{mystatscourse_files/figure-latex/unnamed-chunk-12-1} \end{center}
 
 This is my solution
 
 \vspace{\baselineskip}
 
 \hyperlink{tsk1}{\buttonT{Return to task on P\colpageref{sol1}}}
+\eblockS
+\hypertarget{sol2}{}
+\bblockS[Solution]{\phantomsection\label{tsk2}2}
+\bmp
+\bblockST{Base R}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plot}\NormalTok{(hp }\OperatorTok{~}\StringTok{ }\NormalTok{mpg, }\DataTypeTok{data =}\NormalTok{ mtcars,}
+     \DataTypeTok{pch=}\DecValTok{19}\NormalTok{, }\DataTypeTok{col=}\StringTok{'darkgrey'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{mystatscourse_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+\eblockST
+\emp
+\hspace{0.01\textwidth}
+\bmp\bblockST{\texttt{tidyverse}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(mtcars) }\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mpg, }\DataTypeTok{y =}\NormalTok{ hp))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{mystatscourse_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+\eblockST
+\emp
+
+\vspace{\baselineskip}
+
+\hyperlink{tsk2}{\buttonT{Return to task on P\colpageref{sol2}}}
 \eblockS
 
   \bibliography{book.bib,packages.bib}

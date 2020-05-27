@@ -1,5 +1,5 @@
 p.caption {
-  color: #007dc5;
+  color: #777;
   margin-top: 10px;
 }
 p code {
@@ -13,7 +13,7 @@ pre code {
   white-space: inherit;
 }
 button {
-    background-color: #007dc5;
+    background-color: #808080;
     border: none;
     color: white;
     padding: 10px 25px;
@@ -28,16 +28,16 @@ button {
 
 .panel-default > .panel-heading {
     background-image: none;
-    background-color: #00539b;
+    background-color: #404040;
     color: white;
-    border-color: #00539b;
+    border-color: #404040;
 }
 
 .panel-default > .panel-heading1 {
     background-image: none;
-    background-color: #006962;
+    background-color: #808080;
     color: white;
-    border-color: #006962;
+    border-color: #808080;
 }
 
 /* Style the buttons inside the tab */
@@ -52,13 +52,5 @@ button {
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #007870;
-}
-
-/* Create colour scheme for examples */
-div.example {
-    background-image: none;
-    background-color: #d1d1d1;
-    color: #00539b;
-    border-color: #00539b;
+    background-color: #808080;
 }

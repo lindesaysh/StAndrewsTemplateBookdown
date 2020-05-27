@@ -238,24 +238,52 @@ Solution
 <div class="panel-body">
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">plot</span>(hp <span class="op">~</span><span class="st"> </span>mpg, <span class="dt">data =</span> mtcars, </a>
 <a class="sourceLine" id="cb7-2" title="2">  <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&#39;darkgrey&#39;</span>)</a></code></pre></div>
-<p><img src="mystatscourse_files/figure-html/unnamed-chunk-9-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="mystatscourse_files/figure-html/unnamed-chunk-11-1.png" width="480" style="display: block; margin: auto;" /></p>
 <p>This is my solution</p>
 </div>
 </div>
 </div>
-<!-- ```{solution, multCode = T, cache = F} -->
-<!-- ``{r, fig.height=6, fig.width=6, out.width = "60%"} -->
-<!-- plot(hp ~ mpg, data = mtcars,  -->
-<!--      pch=19, col='darkgrey') -->
-<!-- `` -->
-<!-- The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R. -->
-<!-- #### -->
-<!-- ``{r, fig.height=6, fig.width=6} -->
-<!-- ggplot(mtcars) +  -->
-<!--     geom_point(aes(x = mpg, y = hp)) -->
-<!-- ``  -->
-<!-- The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R. -->
-<!-- ``` -->
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+This is another task with multi solution
+</div>
+</div>
+<button id="displayTextunnamed-chunk-9" onclick="javascript:toggle(&#39;unnamed-chunk-9&#39;);">
+Show Solution
+</button>
+<div id="toggleTextunnamed-chunk-9" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution
+</div>
+<div class="panel-body">
+<div class="tab">
+<button class="tablinksunnamed-chunk-9 active" onclick="javascript:openCode(event, &#39;option1unnamed-chunk-9&#39;, &#39;unnamed-chunk-9&#39;);">
+Base R
+</button>
+<button class="tablinksunnamed-chunk-9" onclick="javascript:openCode(event, &#39;option2unnamed-chunk-9&#39;, &#39;unnamed-chunk-9&#39;);">
+<tt>tidyverse</tt>
+</button>
+</div>
+<div id="option1unnamed-chunk-9" class="tabcontentunnamed-chunk-9">
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">plot</span>(hp <span class="op">~</span><span class="st"> </span>mpg, <span class="dt">data =</span> mtcars,</a>
+<a class="sourceLine" id="cb8-2" title="2">     <span class="dt">pch=</span><span class="dv">19</span>, <span class="dt">col=</span><span class="st">&#39;darkgrey&#39;</span>)</a></code></pre></div>
+<p><img src="mystatscourse_files/figure-html/unnamed-chunk-11-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.</p>
+</div>
+<div id="option2unnamed-chunk-9" class="tabcontentunnamed-chunk-9">
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">ggplot</span>(mtcars) <span class="op">+</span></a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="st">    </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> mpg, <span class="dt">y =</span> hp))</a></code></pre></div>
+<p><img src="mystatscourse_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<p>The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.</p>
+</div>
+<script> javascript:hide('option2unnamed-chunk-9') </script>
+</div>
+</div>
+</div>
 
 </div>
 <!-- </div> -->

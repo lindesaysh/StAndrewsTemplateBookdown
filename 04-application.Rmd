@@ -34,23 +34,30 @@ This is my solution
 ```
 
 
-<!-- ```{solution, multCode = T, cache = F} -->
+```{task}
 
-<!-- ``{r, fig.height=6, fig.width=6, out.width = "60%"} -->
-<!-- plot(hp ~ mpg, data = mtcars,  -->
-<!--      pch=19, col='darkgrey') -->
-<!-- `` -->
+This is another task with multi solution
 
-<!-- The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R. -->
+```
 
-<!-- #### -->
 
-<!-- ``{r, fig.height=6, fig.width=6} -->
-<!-- ggplot(mtcars) +  -->
-<!--     geom_point(aes(x = mpg, y = hp)) -->
-<!-- ``  -->
+```{solution, multCode = T, cache = F}
 
-<!-- The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R. -->
+``{r, fig.height=6, fig.width=6, out.width = "60%"}
+plot(hp ~ mpg, data = mtcars,
+     pch=19, col='darkgrey')
+``
 
-<!-- ``` -->
+The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+####
+
+``{r, fig.height=6, fig.width=6}
+ggplot(mtcars) +
+    geom_point(aes(x = mpg, y = hp))
+``
+
+The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+```
 

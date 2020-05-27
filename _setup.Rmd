@@ -1,7 +1,7 @@
 ```{r include = FALSE, purl = F, cache = F}
 library(knitr)
 ## set knitr options
-opts_chunk$set(cache = TRUE, tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width = 5, fig.height = 5, multCode = F, titles = c("Base R", ifelse(opts_knit$get("rmarkdown.pandoc.to") != "latex", "<tt>tidyverse</tt>", "\\texttt{tidyverse}")))
+opts_chunk$set(cache = TRUE,tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width = 5, fig.height = 5, multCode = F, titles = c("Base R", ifelse(opts_knit$get("rmarkdown.pandoc.to") != "latex", "<tt>tidyverse</tt>", "\\texttt{tidyverse}")))
 ## variables to help save latex answers for appendix
 taskCtr <- 0
 solLabels <- list()
@@ -120,4 +120,9 @@ knit_engines$set(multCode = function(options) {
     }
     return(out)
 })
+
+## variables to help save latex answers for appendix
+
+
+
 ```
