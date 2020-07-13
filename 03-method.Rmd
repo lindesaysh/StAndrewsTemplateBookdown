@@ -13,7 +13,7 @@ And you can add words to the index such as GLM \index{GLM}
 
 ### type 1 - calling from shinyapps.io
 
-```{r myshiny, echo=FALSE, fig.cap='An eaxmple of a shiny app. you can see a live version at (put url here)', screenshot.opts = list(delay = 5)}
+```{r myshiny, echo=FALSE, fig.cap='An example of a shiny app. you can see a live version at (put url here)', screenshot.opts = list(delay = 5)}
 knitr::include_app("https://lindesaysh.shinyapps.io/mt1007_week22/", height='600px')
 ```
 
