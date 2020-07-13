@@ -123,6 +123,4 @@ knit_engines$set(multCode = function(options) {
 
 ## variables to help save latex answers for appendix
 
-
-
 ```
