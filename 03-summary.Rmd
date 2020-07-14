@@ -17,8 +17,8 @@ output:
 
 **Main files**
 
-+ `index`. This is the main Rmd file where you can set the tile and many of the build options
-+ `_bookdown.yml`. This file allows you to choose which chapters to include under which build (gitbook or pdf). You can also specify the book file name and outputs directory. 
++ `index.Rmd`. This is the main Rmd file where you can set the tile and many of the build options
++ `_bookdown.yml`. This file allows you to choose which chapters to include under which build (gitbook or pdf). You can also specify the book file name and outputs directory. This is necessary if using the task/solution chunks.
 
 **Chapter files**
 
@@ -28,30 +28,28 @@ The first three files contain all the content for your book.  The references and
 + `02-bellsandwhistles.Rmd`
 + `03-summary.Rmd`
 + `04-references.Rmd`
-+ `05-ch_appendix.Rmd`
++ `05-ch_appendix.Rmd` *Don't Edit*
 
 **Bibliography files**
 
-+ `book.bib`. This .bib file is where you place your references.
++ `book.bib`. This .bib file is where you place your references. 
 + `packages.bib`. This .bib file is created from the last part of code in the index.Rmd file.  It compiles the citations of the specified packages. 
 
 **Style files**
 
 + `style.css`. This file describes the styling of the gitbook and includes they style of the "task" elements. 
-+ `toc.css`. This file gives the styling for the table of contents panel to the left of the gitbook
-
-**Git files??**
-
-+ `DESCRIPTION`
-+ `README.md`
-+ `LICENCE`
-+ `.gitignore`
-+ `.gitattributes`
 
 **Other files**
 
-+ `_output.yml`  **possibly duplicates whats in the index file??**
-+ `_setup.Rmd`. This file creates the "task" elements in markdown
-+ `preamble.tex`. This file loads all the packages necessary for the PDF generation. It is like the preamble of a latex document.  Also defined here is how to treat the "task" elements for the PDF document. 
-+ `afterbody.tex`
-+ `toggle.html`
++ `_setup.Rmd`. This file creates the "task" elements in markdown. Line 4 of this file sets the global `knitr` options. *Don't Edit except for knitr options*
++ `preamble.tex`. This file loads all the Latex packages necessary for the PDF generation and any new commands. It is like the preamble of a latex document.  Also defined here is how to treat the "task" elements for the PDF document. 
++ `afterbody.tex`. This file specifies that at the end of the PDF, a linked index is created.
++ `toggle.html`. This is a javascript file for rendering the task and solutions. *Don't Edit*
+
+**Git related files**
+
++ `README.md`. This gives a description on the main github page "lindesaysh/StAndrewsTemplate
++ `.gitignore`. This file tells git which files to ignore during version control (this includes the docs folder and _bookdown folder)
++ `.gitattributes`
+
+

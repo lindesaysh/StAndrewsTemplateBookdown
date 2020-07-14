@@ -59,8 +59,9 @@ This might be an example of something
 
 These could be used as tasks with the answer or an opportunity to ask students a question with the answer in the solution.  In the online version (the gitbook) there is a toggle button `Show solution` to see the answer.  In the PDF version, there is a link to take the reader to the solutions, which are in the appendix. There is also a link to get back to the place in the text from the appendix. 
 
-To define the "tasks" we use chunks for the task and for the solution: `"{task}"` and  `"{solution}"`.
+To define the "tasks" we use special chunks for the task and for the solution: `"{task}"` and  `"{solution}"`.
 
+### Single Task and Solution
 
 ```{task}
 
@@ -80,6 +81,7 @@ This is my solution
 ```
 
 
+### Multi-tabbed Solution
 
 ```{task}
 
@@ -88,7 +90,7 @@ This is another task with multi solution
 ```
 
 
-```{solution, multCode = T, cache = F}
+```{solution, multCode = T, cache = F, titles=c("Base R", "tidyverse")}
 
 ``{r, fig.height=6, fig.width=6, out.width = "60%"}
 plot(hp ~ mpg, data = mtcars,
@@ -105,6 +107,44 @@ ggplot(mtcars) +
 ``
 
 The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+```
+
+### Multi-tabbed options
+
+You can also have just the multicode part (not embedded within the solution panel.). These appear side-by-side in the PDF document. 
+
+```{multCode}
+
+Two options: 
+
+* Option 1
+
+####
+
+Two options:
+    
+* Option 2
+
+```
+
+
+### Task with held solutions
+
+```{task}
+
+Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
+
+```
+
+```{solution, renderSol=FALSE}
+
+``{r}
+plot(hp ~ mpg, data = mtcars, 
+  pch=19, col='darkgrey')
+``
+
+This is my solution
 
 ```
 
