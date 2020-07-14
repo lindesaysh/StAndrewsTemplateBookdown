@@ -1,0 +1,110 @@
+```{r}
+library(ggplot2)
+```
+
+
+# Bells and Whistles {#bellsandwhistles}
+
+We describe some extra bells and whistles you can add to the book in this chapter.
+
+We showed some examples in the introduction, which we can reference back to here (Chapter \@ref(intro)). You can also reference specific sections by giving them a label `{#sectionname}`
+
+And you can add words to the index such as GLM \index{GLM}
+
+## Shiny app
+
+### type 1 - calling from shinyapps.io
+
+This is a bad example of a shiny app to use as it is too large.  
+
+(ref:myshiny) An example of a shiny app. you can see a live version [here](https://lindesaysh.shinyapps.io/mt1007_week22/)
+
+```{r myshiny, echo=FALSE, fig.cap='(ref:myshiny)', screenshot.opts = list(delay = 5)}
+knitr::include_app("https://lindesaysh.shinyapps.io/mt1007_week22/", height='600px')
+```
+
+
+You can use a shiny app embedded in the notes and refer to it the same way as a normal figure: Figure \@ref(fig:myshiny).
+
+### Type 2 - creating inline
+
+I did not manage to achieve this task of creating a shiny app inline. 
+
+<!-- ```{r eruptions, echo=FALSE} -->
+<!-- selectInput( -->
+<!--   'breaks', label = 'Number of bins:', -->
+<!--   choices = c(10, 20, 35, 50), selected = 20 -->
+<!-- ) -->
+
+<!-- renderPlot({ -->
+<!--   par(mar = c(4, 4, .1, .5)) -->
+<!--   hist( -->
+<!--     faithful$eruptions, as.numeric(input$breaks), -->
+<!--     col = 'gray', border = 'white', -->
+<!--     xlab = 'Duration (minutes)', main = '' -->
+<!--   ) -->
+<!-- }) -->
+<!-- ``` -->
+
+
+### Example one
+
+This might be an example of something
+
+### Example two
+
+> **Aside**: using the model to predict outside of the range of the observed data is called **extrapolating**. Oftentimes, statistical models are developed *in order* to be used to extrapolate (e.g. climate modelling). This is however, dangerous, as we can only assess the assumptions of the model over the range of the observed data. When extrapolating we have to assume that these relationships hold beyond the range of the data, which may or may not be reasonable (hence why weather forecast over short-time periods are OK, but climate forecasts are much more uncertain). Hence, we should always view the model as an approximation of the data generating process. In this particualr case, the interpretation of the parameters is not sensible when $x = 0$ (weight = 0 kg), but makes sense in the range that we are interested in exploring. If the case where $x = 0$ is important, then we would have to change the model to ensure that the predictions made sense at those values of $x$.
+
+## Tasks with Feedback
+
+These could be used as tasks with the answer or an opportunity to ask students a question with the answer in the solution.  In the online version (the gitbook) there is a toggle button `Show solution` to see the answer.  In the PDF version, there is a link to take the reader to the solutions, which are in the appendix. There is also a link to get back to the place in the text from the appendix. 
+
+To define the "tasks" we use chunks for the task and for the solution: `"{task}"` and  `"{solution}"`.
+
+
+```{task}
+
+Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
+
+```
+
+```{solution}
+
+``{r}
+plot(hp ~ mpg, data = mtcars, 
+  pch=19, col='darkgrey')
+``
+
+This is my solution
+
+```
+
+
+
+```{task}
+
+This is another task with multi solution
+
+```
+
+
+```{solution, multCode = T, cache = F}
+
+``{r, fig.height=6, fig.width=6, out.width = "60%"}
+plot(hp ~ mpg, data = mtcars,
+     pch=19, col='darkgrey')
+``
+
+The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+####
+
+``{r, fig.height=6, fig.width=6}
+ggplot(mtcars) +
+    geom_point(aes(x = mpg, y = hp))
+``
+
+The plot suggests that a linear relationship might exist between the two variables. So we can proceed by fitting a linear model in R.
+
+```
+

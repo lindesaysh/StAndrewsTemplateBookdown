@@ -5,8 +5,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">A Book Sample; St Andrews</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+        <li><a href="https://github.com/lindesaysh/StAndrewsTemplateBookdown" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/lindesaysh/StAndrewsTemplateBookdown/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:
