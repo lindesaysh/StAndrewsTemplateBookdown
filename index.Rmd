@@ -60,7 +60,7 @@ I highly recommend the following books:
 
 ## Data files {-}
 
-All data files can be downloaded as a ZIP file from [here](https://exeter-data-analytics.github.io/StatModelling/dataFiles.zip).
+All data files can be downloaded as a ZIP file from [here](https://github.com/lindesaysh/StAndrewsTemplateBookdown/blob/master/data.zip).
 
 ## Acknowledgements {-}
 
