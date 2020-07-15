@@ -1,5 +1,6 @@
+/* Style the figure/table captions.  use #c60c46 for st andrews dark green of #231f20 for black */
 p.caption {
-  color: #007dc5;
+  color: #005953;
   margin-top: 10px;
 }
 p code {

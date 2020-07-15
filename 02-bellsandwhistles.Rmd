@@ -131,6 +131,8 @@ Two options:
 
 ### Task with held solutions
 
+In the solution chunk header, if `renderSol==FALSE` then the solutions are not rendered as part of the book.  By default, in the `_setupR` file, this is set to TRUE.  Individual solutions can be held, or if one of your chapters was a practical, you can set this at the beginning of a chapter. 
+
 ```{task}
 
 Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?

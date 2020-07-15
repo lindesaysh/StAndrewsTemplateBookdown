@@ -37,7 +37,7 @@ The first three files contain all the content for your book.  The references and
 
 **Style files**
 
-+ `style.css`. This file describes the styling of the gitbook and includes they style of the "task" elements. 
++ `style.css`. This file describes the styling of the gitbook and includes they style of the "task" elements,the colour of the figure captions etc.  If you want to know the St Andrews colours they are [here](https://www.st-andrews.ac.uk/brand/design-guidelines/colours/)
 
 **Other files**
 

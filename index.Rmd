@@ -4,6 +4,7 @@ title: |
 author: "L. Scott-Hayward & JJ Valletta"
 date: '`r format(Sys.Date(), "%d %B %Y")`'
 site: bookdown::bookdown_site
+fontsize: 12pt
 output: 
   bookdown::gitbook:
     lib_dir: "book_assets"
