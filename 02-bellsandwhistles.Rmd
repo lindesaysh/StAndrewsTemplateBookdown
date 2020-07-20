@@ -81,11 +81,13 @@ This is my solution
 ```
 
 
-### Multi-tabbed Solution
+### Two-tabbed Solution
+
+You can have a task with a solution with **two** different outputs. For example, you may want to show a solution using both base `R` and `tidyverse` coding. 
 
 ```{task}
 
-This is another task with multi solution
+This is another task but with a tabbed solution
 
 ```
 
@@ -112,28 +114,28 @@ The plot suggests that a linear relationship might exist between the two variabl
 
 ### Multi-tabbed options
 
-You can also have just the multicode part (not embedded within the solution panel.). These appear side-by-side in the PDF document. 
+You can also have just the multicode part (not embedded within the solution panel.). These appear side-by-side in the PDF document. Note that you can only have **two** tabs. 
 
-```{multCode}
+```{multCode, titles=c('Part A', 'Part B')}
 
 Two options: 
 
-* Option 1
+* Option 1 - This is some text for part A
 
 ####
 
 Two options:
     
-* Option 2
+* Option 2 - This is some text for part B
 
 ```
 
 
 ### Task with held solutions
 
-In the solution chunk header, if `renderSol==FALSE` then the solutions are not rendered as part of the book.  By default, in the `_setupR` file, this is set to TRUE.  Individual solutions can be held, or if one of your chapters was a practical, you can set this at the beginning of a chapter. 
+In the solution chunk header, if `renderSol=FALSE` then the solutions are not rendered as part of the book.  By default, in the `_setupR` file, this is set to TRUE.  Individual solutions can be held, or if one of your chapters was a practical, you can set this at the beginning of a chapter. 
 
-```{task}
+```{task, title='Task (solution hidden)'}
 
 Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
 
@@ -146,7 +148,7 @@ plot(hp ~ mpg, data = mtcars,
   pch=19, col='darkgrey')
 ``
 
-This is my solution
+This is my solution which you will only see if `renderSol` is set to `TRUE`.
 
 ```
 
