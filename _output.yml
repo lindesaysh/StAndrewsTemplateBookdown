@@ -5,7 +5,7 @@ bookdown::gitbook:
     edit: null
     download: ["pdf"]
   split_by: chapter
-  highlight: tango
+  highlight: pygments
   css: 'style.css'
   includes:
     in_header: '_toggle.html'
