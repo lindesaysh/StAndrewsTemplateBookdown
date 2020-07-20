@@ -156,7 +156,7 @@ plot(hp ~ mpg, data = mtcars,
 
 ```
 
-## Two-tabbed Solution
+## Two-tabbed solution
 
 You can have a task with **two** different solutions side-by-side, using the `multCode = T` option to the solution box. For example, you may want to show a solution using both base `R` and `tidyverse`. Here the two tabs are separated by four consecutive hashes: `####`, and the `titles` option gives the tab titles (these can be set globally if preferred). For example:
 
