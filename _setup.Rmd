@@ -1,8 +1,7 @@
 ```{r include = FALSE, purl = F, cache = F}
-library(knitr)
-
 ## set knitr options
-opts_chunk$set(cache = F, tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width = 5, fig.height = 5, multCode = F, renderTask = T, renderSol = T)
+opts_chunk$set(multCode = F, renderTask = T, renderSol = T)
+# you can set these in the index.Rmd file instead.  
 
 ## variables to help save latex answers for appendix
 taskCtr <- 0
