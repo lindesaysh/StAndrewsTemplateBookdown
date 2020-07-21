@@ -6,27 +6,27 @@ This template contains several files with different extensions and may look daun
 
 ### Markdown files {-}
 
-+ `index.Rmd`: The *only* non-optional file. Starts with a YAML configuration part to set the title, author, date and other build options. Then the must have code chunk `{r, child = "_setup.Rmd"}` adds `_setup.Rmd` to the book using the [`child`](https://bookdown.org/yihui/rmarkdown-cookbook/child-document.html) (more on that later). The rest is a normal R Markdown file (optional), which typically contains the preface of your course notes (although this could be written in a separate `.Rmd` file for more modularity).
++ `index.Rmd`: The *only* non-optional file. Starts with a YAML configuration part to set the title, author, date and other build options. Then the must have code chunk `{r, child = "_setup.Rmd"}` adds `_setup.Rmd` to the book (more on that later). The rest is a normal R Markdown file (optional), which typically contains the preface of your course notes (although this could be written in a separate `.Rmd` file for more modularity).
 
 **Note**: The last chunk of code in `index.Rmd` creates a BibTeX file to reference the packages used, see `packages.bib` for more details. This is also optional.
 
-+ `01-intro.Rmd` - `03-summary.Rmd`: These files contain all the content of your course notes. Each `.Rmd` file is a chapter and must begin with a single `#` level header (e.g. `# Linear regression`). You can have as many as you want. `.Rmd` files are added to the book in alphabetical order. It is therefore recommended to number the files in the order you'd like them to appear. Alternatively, use `_bookdown.yml` to specify the precise order.  
++ `01-intro.Rmd` - `03-summary.Rmd`: These files contain all the content of your course notes. Each `.Rmd` file is a chapter and must begin with a single `#` level header (e.g. `# Linear regression`). You can have as many as you want. `.Rmd` files are added to the book in alphabetical order. It is therefore recommended to number the files in the order you'd like them to appear. Alternatively, use `_bookdown.yml` to specify the precise order (more on that later).  
 
 + `04-references.Rmd`: Appends references at the end of the gitbook/HTML book. You can edit the name of the file, but don't edit what's in it. 
 
 + `05-ch_appendix.Rmd`: Appends solutions at the end of the PDF file. You can edit the name of the file, but don't edit what's in it. 
 
-+ `README.md`: Primarily intended as a landing page for the [Github repo](https://github.com/lindesaysh/StAndrewsTemplateBookdown) where this template is currently residing. This file can be safely deleted. Alternatively, if you don't use version control (like git), this file can be used to keep track of any changes done to your course notes.
++ `README.md`: Primarily intended as a landing page for the [Github repo](https://github.com/lindesaysh/StAndrewsTemplateBookdown) where this template is currently residing. This file can be safely deleted. Alternatively, if you don't use version control (like git), this file can be used to keep track of any major changes done to your course notes.
 
-+ `_setup.Rmd`: This file specifies features/environments exclusive to this template; the task/solution block, multi-tabbed solutions, etc (see "Bells and Whistles" chapter). This file sets the global `knitr` options. It is recommended not to edit this file. Instead, if needed, override these global options by calling the `opts_chunk$set(...)` function in `index.Rmd` (*after* the line of code which adds `_setup.Rmd` to the book) or at the start of each chapter (if you want each chapter to have its own default options).    
++ `_setup.Rmd`: This file specifies features/environments exclusive to this template; the task/solution block, multi-tabbed solutions, etc (see Chapter \@ref(bellsandwhistles)). This file sets the global `knitr` options. It is recommended not to edit this file. Instead, if needed, override these global options by calling the `opts_chunk$set(...)` function in `index.Rmd` (*after* the line of code which adds `_setup.Rmd` to the book) or at the start of each chapter (if you want each chapter to have its own default options).    
 
 ### YAML files {-}
 
 [YAML](https://en.wikipedia.org/wiki/YAML) files are human-readable files typically used for configuration files.
 
-+ `_bookdown.yml`: Overarching configuration file for the book; book file name, output directory, etc. It allows you to choose which chapters to include under which build (gitbook/html or pdf/latex). This is particularly useful when you're working on a large number of chapters. Through the `rmd_files` option you can choose to only compile the chapter you're currently working on, which reduces compilation time significantly.  
++ `_bookdown.yml`: Overarching configuration file for the book; set book file name, output directory, etc. It allows you to choose which chapters to include under which build (gitbook/html or pdf/latex). This is particularly useful when you're working on a large number of chapters. Through the `rmd_files` option you can choose to only compile the chapter you're currently working on, which reduces compilation time significantly.  
 
-**Note**: The `latex` option must have the `appendix.Rmd` file as its last entry (name of file is irrelevant). This ensures that the appendix is properly formatted for the solutions to the problems. This is *only* needed for the PDF; for gitbook/HTML, the task/solution use a toggle button instead.
+**Note**: The `latex` option must have the `appendix.Rmd` file as its last entry (name of file is irrelevant). This ensures that the appendix is properly formatted for the solutions to the problems. This is *only* needed for the PDF output; for gitbook/HTML, the task/solution block uses a toggle button instead.
 
 ```YAML
 book_filename: "StAndrewsTemplate"
@@ -40,7 +40,7 @@ rmd_files:
 output_dir: "docs"
 ```
 
-+ `_output.yml`: Configuration file to set individual options of *each* output format. For example, which TeX typesetting engine to use, which style sheet to use for gitbook/HTML, whether to split the book by chapter or sections, etc. You do not need to edit this file unless. No need to edit this file unless you really want to.
++ `_output.yml`: Configuration file to set individual options of *each* output format. For example, which TeX typesetting engine to use, which style sheet to use for gitbook/HTML, whether to split the book by chapter or sections, etc. This information can be alternatively included in the YAML portion of `index.Rmd` (under the `output:` option). However, by having it as a separate file, it makes `index.Rmd` less cluttered. No need to edit this file unless you really want to.
 
 ```YAML
 bookdown::gitbook:
@@ -75,7 +75,7 @@ You can add words to the index using the `\index{}` command, e.g. `\index{least-
 
 ### Bibliography files {-}
 
-+ `book.bib`: BibTeX file with your references. This file can be generated from most reference management software like [Mendeley](https://www.mendeley.com/), [Zotero](https://www.zotero.org/), etc.    
++ `book.bib`: BibTeX file with your references. This file can be generated by most reference management software like [Mendeley](https://www.mendeley.com/), [Zotero](https://www.zotero.org/), etc.    
 
 + `packages.bib`: This BibTeX file is created from the last chunk of code in `index.Rmd` file.  It compiles the citations of the specified packages. 
 
@@ -92,7 +92,7 @@ knitr::write_bib(c(
 
 ### Web files {-}
 
-+ `style.css`: CSS files describe the "look" of a webpage (colours, font sizes, etc.). This file describes the styling of the gitbook and includes the style of the task/solution blocks, the colour of the figure captions etc. The St Andrews colours used can be found [here](https://www.st-andrews.ac.uk/brand/design-guidelines/colours/). Edit at your own risk!
++ `style.css`: CSS files describe the "look" of a webpage (colours, font sizes, etc.). Here, it describes the styling of the gitbook and includes the style of the task/solution blocks, the colour of the figure captions etc. The St Andrews colours used can be found [here](https://www.st-andrews.ac.uk/brand/design-guidelines/colours/). Edit at your own risk!
 
 + `toggle.html`. This is a javascript file for rendering the show/hide solution toggle button. Do not edit.
 
@@ -107,7 +107,7 @@ Once you have finished compiling your course notes into a nice book, it is time 
 
 1. Compress the folder containing the compiled course notes as a `.zip` file
 ^[The name of this folder is set in `output_dir` in `_bookdown.yml`, e.g. `docs`]. 
-If you do not use version control, it is recommended that you rename this zip file by adding a timestamp, in case you update it later on.
+If you do not use version control, it is recommended that you rename this zip file by adding a timestamp (e.g. `docs_20200721.zip`), in case you want to archive older versions.
 
 2. Log into your course page on Moodle and turn editing on.
 
