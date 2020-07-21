@@ -65,6 +65,6 @@ We are indebted to all the statisticians who made some stats possible.
 ```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'ggplot2'
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'ggplot2', 'tidyverse'
 ), 'packages.bib')
 ```

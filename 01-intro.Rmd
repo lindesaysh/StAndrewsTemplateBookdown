@@ -141,15 +141,25 @@ We can reference the example by its code chunk label with the `exm:` prefix. For
 
 There are also `theorem`, `lemma`, etc. environments. Full details can be found [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html).
 
+You can also create blocks of text using the simple `>` without the need for a chunk.  For example, 
+
+````
+> **Aside**: using the model to predict outside of the range of the observed data is called **extrapolating**.
+````
+
+renders as
+
+> **Aside**: using the model to predict outside of the range of the observed data is called **extrapolating**.
+
 ## Shiny apps and HTML widgets
 
 You can add [Shiny apps](https://bookdown.org/yihui/bookdown/web-pages-and-shiny-apps.html) and [HTML widgets](https://bookdown.org/yihui/bookdown/html-widgets.html) to your book.
 
 For example, using the `knitr::include_app(...)` function we can embed a Shiny app that is hosted somewhere else. 
-Note that this app is quite large and one would need to resize to look nicer embedded.
+Note that this app renders well in the web version of the notes but the screenshot needs resizing in the PDF version.
 
-(ref:myshiny) An example of a shiny app. You can see a live version [here](https://lindesaysh.shinyapps.io/mt1007_week22/)
+(ref:myshiny) An example of a shiny app. You can see a live version [here](https://lindesaysh.shinyapps.io/faithfulshiny/)
 
-```{r myshiny, echo=FALSE, fig.cap='(ref:myshiny)', screenshot.opts = list(delay = 5), out.width='100%'}
-knitr::include_app("https://lindesaysh.shinyapps.io/mt1007_week22/", height='600px')
+```{r myshiny, echo=FALSE, fig.cap='(ref:myshiny)', screenshot.opts = list(delay = 2), out.width='100%'}
+knitr::include_app("https://lindesaysh.shinyapps.io/faithfulshiny/")
 ```
