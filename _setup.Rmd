@@ -1,10 +1,13 @@
 ```{r include = FALSE, purl = F, cache = F}
 library(knitr)
+
 ## set knitr options
-opts_chunk$set(cache = F, tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width = 5, fig.height = 5, multCode = F, renderTask = T, renderSol = T, warning=FALSE, message=FALSE)
+opts_chunk$set(cache = F, tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width = 5, fig.height = 5, multCode = F, renderTask = T, renderSol = T)
+
 ## variables to help save latex answers for appendix
 taskCtr <- 0
 solLabels <- list()
+
 ## custom engine for tasks
 knit_engines$set(task = function(options) {
     if(options$renderTask) {
@@ -28,6 +31,7 @@ knit_engines$set(task = function(options) {
         return(NULL)
     }
 })
+
 ## custom engine for solutions
 knit_engines$set(solution = function(options) {
     if(options$renderSol) {
@@ -92,6 +96,7 @@ knit_engines$set(solution = function(options) {
         return(NULL)
     }
 })
+
 ## custom engine for tabbed box
 knit_engines$set(multCode = function(options) {
     ## split code

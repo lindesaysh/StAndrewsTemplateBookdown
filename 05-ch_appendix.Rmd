@@ -1,5 +1,3 @@
-<!-- \newgeometry{margin=0.5in} -->
-
 # (APPENDIX) Appendix {-}
 
 # Answers
