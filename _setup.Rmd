@@ -1,8 +1,4 @@
 ```{r include = FALSE, purl = F, cache = F}
-## set knitr options
-opts_chunk$set(multCode = F, renderTask = T, renderSol = T)
-# you can set these in the index.Rmd file instead.  
-
 ## variables to help save latex answers for appendix
 taskCtr <- 0
 solLabels <- list()

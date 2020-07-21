@@ -14,10 +14,11 @@ colorlinks: yes
 
 ```{r setup, echo=FALSE}
 library(knitr)
-## set knitr options (there are additional options in the _setup.Rmd file if you are including tasks/solutions)
-opts_chunk$set(cache = F, tidy.opts = list(width.cutoff = 55), tidy = F, fig.align = "center", fig.width=5, fig.height=5)
+## set knitr global options
+opts_chunk$set(cache=F, tidy.opts=list(width.cutoff=55), tidy=F, 
+               fig.align="center", fig.width=5, fig.height=5,
+               multCode=F, renderTask=T, renderSol=T)
 ```
-
 
 ```{r, child = "_setup.Rmd", include = F, purl = F, cache = F}
 ```
