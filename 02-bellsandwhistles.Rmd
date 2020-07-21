@@ -5,12 +5,11 @@ Chapter \@ref(intro) briefly introduces the basic features of R Markdown and boo
 * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 * [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
 
-In this Chapter we are going to introduce *extra* features/environments exclusive to the St Andrews template. 
-
+In this Chapter we are going to introduce *extra* features/environments exclusive to the St Andrews template. Big thanks to [TJ McKinley](https://github.com/tjmckinley/RtutorialSkeleton) for sharing with us the code for these features.  
 
 ## Task and solution block
 
-The `task` block can be used to set exercises for the students. The `solution` block reveals the answer to the student (if enabled; more on that later). For the `gitbook`/HTML version 
+The `task` block can be used to set exercises for the students. The `solution` block reveals the answer to the student (if enabled; more on that later). For the gitbook/HTML version 
 there is a toggle button `Show Solution` that reveals the answer. In the PDF version, there is a hyperlink to take the reader to the solutions, which are in the appendix. There is also a link to get back to the place in the text from the appendix. 
 
 The `task` block is used as follows. For example: 
@@ -124,7 +123,7 @@ Add 2 and 2 together
 
 ## Different task and solution titles
 
-`task` and `solution` boxes can be given different names using the `title` option. For example:
+`task` and `solution` boxes can be given different names using the `title` option (these can be set globally if preferred). For example:
 
 ````
 
@@ -142,6 +141,8 @@ plot(hp ~ mpg, data = mtcars,
 ```
 
 ````
+
+renders as:
 
 ```{task, title = "Question"}
 Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
@@ -182,7 +183,7 @@ So we can proceed by fitting a linear model in R.
 
 ####
 
-``{r, fig.height=6, fig.width=6}
+``{r, fig.height=6, fig.width=6, out.width = "60%"}
 ggplot(mtcars) +
     geom_point(aes(x = mpg, y = hp))
 ``
@@ -211,7 +212,7 @@ So we can proceed by fitting a linear model in R.
 
 ####
 
-``{r, fig.height=6, fig.width=6}
+``{r, fig.height=6, fig.width=6, out.width = "60%"}
 ggplot(mtcars) +
     geom_point(aes(x = mpg, y = hp))
 ``
@@ -227,7 +228,7 @@ You can also have just the multicode part (not embedded within the solution pane
 
 ````
 
-```{multCode}`r ''`
+```{multCode, titles=c('Part A', 'Part B')}`r ''`
 
 Two options: 
 
@@ -300,13 +301,14 @@ This is my solution which you will only see if `renderSol` is set to `TRUE`.
 
 ```
 
-By default, in `_setup.Rmd`, `renderSol=TRUE`. If one of your chapters is a tutorial or practical, it can become tedious having to set `renderSol` to `FALSE` for every question. 
+By default, in `_setup.Rmd`, `renderSol` is set to `TRUE`. If one of your chapters is a tutorial/practical, and you want to release the answers later on in the course, 
+it can become tedious having to set `renderSol` to `FALSE` for every question. 
 Instead, you can override this default at the beginning of each chapter, so you can turn on/off the solutions, as follows:
 
 ````
 
 ``{r, include=F}
-opts_chunk$set(renderSol=TRUE)
+opts_chunk$set(renderSol=FALSE)
 ``
 
 ````
