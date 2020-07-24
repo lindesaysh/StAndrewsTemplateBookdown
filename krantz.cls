@@ -485,6 +485,9 @@
     \crcrule
     \vskip 22bp
     {\baselineskip 24bp\lineskip 24bp\TitlePageTitleFont\@title\par}}}
+    \begin{center}
+      \includegraphics[width=0.4\textwidth]{standard-vertical-black.png}
+    \end{center}
   \@thanks
   \vfil\null
   \end{titlepage}%

@@ -1,6 +1,5 @@
 --- 
-title: |
-  ![](standard-vertical-black.png){width=0.4in} MTXXXX: Some stats
+title: "MTXXXX: Some stats"
 description: "This is an example gitbook with some St Andrews styling."
 author: "[L. Scott-Hayward](lass@st-andrews.ac.uk) and [JJ Valletta](jjv1@st-andrews.ac.uk)"
 date: '`r format(Sys.Date(), "%d %B %Y")`'
