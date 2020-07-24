@@ -9,6 +9,7 @@ p code {
 pre {
   word-break: normal;
   word-wrap: normal;
+  font-size: 1em;
 }
 pre code {
   white-space: inherit;
