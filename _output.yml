@@ -14,9 +14,14 @@ bookdown::gitbook:
     in_header: '_toggle.html'
     
 bookdown::pdf_book:
-  keep_tex: TRUE
-  citation_package: natbib
-  latex_engine: xelatex
   includes:
     in_header: preamble.tex
     after_body: afterbody.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+  pandoc_args: --top-level-division=chapter
+  toc_depth: 3
+  toc_unnumbered: no
+  toc_appendix: yes
+
