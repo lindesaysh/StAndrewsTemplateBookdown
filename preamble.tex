@@ -1,23 +1,44 @@
+%============================================================================%
+% St Andrews bookdown template 
+% LaTeX preamble file
+%============================================================================%
+
+%============================================================================%
+% Generic packages
+%============================================================================%
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{amsthm}
+
+%============================================================================%
+% Change Bibliography to References to match gitbook output
+%============================================================================%
+\renewcommand{\bibname}{References}
+
+%============================================================================%
+% Place all figures and tables after code chunk in PDF output
+%============================================================================%
+\usepackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+
+%============================================================================%
+% Make index so we can print it later (see: afterbody.tex)
+%============================================================================%
+\usepackage{makeidx}
+\makeindex
+
+%============================================================================%
+% Copied from Yihui's repo 
+% https://github.com/rstudio/bookdown/tree/master/inst/examples
+% First part to change spacing, second to cater for xetex latex engine
+%============================================================================%
 \makeatletter
 \def\thm@space@setup{%
   \thm@preskip=8pt plus 2pt minus 4pt
   \thm@postskip=\thm@preskip
 }
 \makeatother
-
-\usepackage{makeidx}
-\makeindex
-
-% Change Bibliography to References
-\renewcommand{\bibname}{References}
-
-% Place all figures and tables after code in PDF output
-\usepackage{float}
-\floatplacement{figure}{H}
-\floatplacement{table}{H}
 
 \ifxetex
   \usepackage{letltxmacro}
@@ -33,31 +54,28 @@
   }%
 \fi
 
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-% latex macro to create task boxes
+%============================================================================%
+% LaTeX macro to create task boxes
+%============================================================================%
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
-
 \definecolor{taskCol}{HTML}{00539b}
 \definecolor{taskCol1}{HTML}{007870}
-
 \tcbset{colback=white,colframe=taskCol,arc=0mm}
 
-%trick to fool markdown into compiling
+% Trick to fool markdown into compiling
 \newcommand{\bblockT}[2][Task]{\begin{tcolorbox}[title = #1 #2, parbox = false]}
 \newcommand{\eblockT}{\end{tcolorbox}}
 \newcommand{\bblockS}[2][Solution]{\begin{tcolorbox}[title = #1 #2, colframe=taskCol1, breakable, parbox = false]}
 \newcommand{\eblockS}{\end{tcolorbox}}
 
-%add tabbed solutions environment
+% Add tabbed solutions environment
 \newcommand{\bmp}{\begin{minipage}[c]{0.5\textwidth}}
 \newcommand{\emp}{\end{minipage}}
 \newcommand{\bblockST}[1]{\begin{tcolorbox}[title = #1, colframe=taskCol1, breakable, parbox = false]}
 \newcommand{\eblockST}{\end{tcolorbox}}
 
-%set solution button link
+% Set solution button link
 \usepackage{tikz}
 
 \newcommand{\buttonT}[1]{
@@ -83,6 +101,4 @@
     ] (c1) {#1};
     \end{tikzpicture}
 }
-
 \newcommand{\colpageref}[1]{\hypersetup{linkcolor=white}\pageref{#1}}
-
