@@ -5,7 +5,7 @@ Chapter \@ref(intro) briefly introduces the basic features of R Markdown and boo
 * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 * [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
 
-In this Chapter we are going to introduce *extra* features/environments exclusive to the St Andrews template. Big thanks to [TJ McKinley](https://github.com/tjmckinley/RtutorialSkeleton) for sharing with us the code for these features.  
+In this Chapter we are going to introduce *extra* features/environments exclusive to the St Andrews template. Big thanks to [TJ McKinley](https://github.com/tjmckinley/RtutorialSkeleton) for sharing with us the code for the task and solution features.  
 
 ## Task and solution block
 
@@ -314,3 +314,131 @@ opts_chunk$set(renderSol=FALSE)
 ````
 
 **Note** that the chunk above changes everything after the chunk, so later chapters will retain this change unless you reset it. 
+
+
+## Adding Boxes
+
+Sometimes you may wish to add a box section to your notes. There are currently three different coloured boxes defined; green and blue with white backgrounds and blue with pale blue background. For example, 
+
+````
+:::: {.greenbox data-latex=""}
+This is an example of a green box.
+::::
+
+:::: {.bluebox data-latex=""}
+This is an example of a blue box.
+::::
+
+:::: {.palebluebox data-latex=""}
+This is an example of a blue box with pale blue background.
+::::
+````
+
+will render as:
+
+:::: {.greenbox data-latex=""}
+This is an example of a green box.
+::::
+  
+
+:::: {.bluebox data-latex=""}
+This is an example of a blue box.
+::::
+  
+
+:::: {.palebluebox data-latex=""}
+This is an example of a blue box with pale blue background.
+::::
+  
+
+You can also give your box a title. You can use `:::` to denote a separate section inside the box:
+
+````
+:::: {.palebluebox data-latex=""}
+::: {.center data-latex=""}
+**This is my title**
+:::
+
+This is the contents of my box.
+
+::::
+
+````
+renders as
+
+:::: {.palebluebox data-latex=""}
+::: {.center data-latex=""}
+**This is my title**
+:::
+
+This is the contents of my box.
+
+::::
+
+
+You can add equations, figures, r-code etc to your boxes. For example: 
+
+````
+:::: {.greenbox data-latex=""}
+::: {.center data-latex=""}
+**Things you can include**
+:::
+
+Equations: 
+$$y = \beta_0 + \beta_1X$$
+
+R-code:
+```{r, eval=FALSE}
+1+1
+```
+
+Figures:
+```{r, echo=FALSE, fig.width=1,results='asis', eval=FALSE}
+knitr::include_graphics('standard-vertical-black.png')
+```
+
+Formatting:
+
++ **bold**
++ *italic*
+    a) sub bullets
+
+::::
+````
+
+will render as:
+
+:::: {.greenbox data-latex=""}
+::: {.center data-latex=""}
+**Things you can include**
+:::
+
+Equations: 
+
+$$y = \beta_0 + \beta_1X$$
+R-code:
+
+```{r}
+1+1
+```
+
+Figures:
+
+```{r, echo=FALSE, out.width='10%'}
+knitr::include_graphics('standard-vertical-black.png')
+```
+
+Formatting:
+
++ **bold**
++ *italic*
+    a) sub bullets
+
+::::
+
+The colour scheme for the boxes is defined in the following files:
+
++ `style.css`.  For html output, see the section "Create colour scheme for boxes" 
++ `preamble.tex`. For pdf output, see the section "LaTeX to create coloured boxes"
+
+For more information on these boxes and other custom blocks have a look at  [this section ](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) of the R-Markdown Cookbook. 

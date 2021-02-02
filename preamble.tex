@@ -2,7 +2,7 @@
 % St Andrews bookdown template 
 % LaTeX preamble file
 %============================================================================%
-
+\renewcommand{\familydefault}{\sfdefault}
 %============================================================================%
 % Generic packages
 %============================================================================%
@@ -102,3 +102,41 @@
     \end{tikzpicture}
 }
 \newcommand{\colpageref}[1]{\hypersetup{linkcolor=white}\pageref{#1}}
+
+
+%============================================================================%
+% LaTeX to create coloured boxes
+%============================================================================%
+
+\usepackage{tcolorbox}
+
+% \definecolor{backcolour}{HTML}{white}
+\definecolor{framecolour}{HTML}{00539b}
+
+\newtcolorbox{bluebox}{
+  colback=white,
+  colframe=framecolour,
+  coltext=black,
+  boxsep=5pt,
+  arc=4pt}
+  
+\definecolor{framegreen}{HTML}{006962}
+  
+\newtcolorbox{greenbox}{
+  colback=white,
+  colframe=framegreen,
+  coltext=black,
+  boxsep=5pt,
+  arc=4pt}
+
+\definecolor{framecolour}{HTML}{00539b}
+\definecolor{blueback}{HTML}{EEEEFF}
+
+\newtcolorbox{palebluebox}{
+  colback=blueback,
+  colframe=framecolour,
+  coltext=black,
+  boxsep=5pt,
+  arc=4pt}
+  
+  

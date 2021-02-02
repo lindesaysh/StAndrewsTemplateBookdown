@@ -64,3 +64,36 @@ div.example {
     color: #00539b;
     border-color: #00539b;
 }
+
+/* Create colour scheme for boxes */
+
+.bluebox {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.greenbox {
+  padding: 1em;
+  background: white;
+  color: black;
+  border: 2px solid #006962;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.palebluebox {
+  padding: 1em;
+  background: #EEEEFF;
+  color: black;
+  border: 2px solid #00539b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
