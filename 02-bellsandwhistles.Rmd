@@ -393,7 +393,7 @@ R-code:
 ```
 
 Figures:
-```{r, echo=FALSE, fig.width=1,results='asis', eval=FALSE}
+```{r, echo=FALSE, fig.width=1,results='asis', eval=FALSE, fig.alt="University of St Andrews Logo"}
 knitr::include_graphics('standard-vertical-black.png')
 ```
 
