@@ -60,7 +60,7 @@ button {
 /* Create colour scheme for examples */
 div.example {
     background-image: none;
-    background-color: #d1d1d1;
+    background-color: #f4f4f4;
     color: #00539b;
     border-color: #00539b;
 }
@@ -96,4 +96,24 @@ div.example {
   border: 2px solid #00539b;
   border-radius: 10px;
   margin-bottom: 10px;
+}
+
+/* Create colour scheme for theorem-like environments */
+
+div.theorem, div.proposition, div.lemma, div.corollary {
+  border: solid #00853f;
+  padding: 1em;
+  margin: 1em;
+}
+
+div.conjecture {
+  border: solid #f5842b;
+  padding: 1em;
+  margin: 1em;
+}
+
+/* Underline hyperlinks in the body to meet accessibility standards */
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+  text-decoration: underline;
 }
