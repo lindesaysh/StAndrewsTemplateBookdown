@@ -24,6 +24,20 @@ We can then reference the chapter using the `\@ref(label)` syntax. For example, 
 
 Figures and tables with captions are placed in `figure` and `table` environments, respectively.
 
+To include an image directly, it's easiest to use `knitr`:
+
+````
+```{r, logo2, out.width="20%", echo=FALSE fig.alt='University of St Andrews Logo', fig.cap='A recognisable image.'}`r ''`
+knitr::include_graphics('standard-vertical-black.png')
+```
+````
+produces 
+
+```{r, logo2, out.width="20%", echo=FALSE, fig.alt='University of St Andrews Logo', fig.cap='A recognisable image.'}
+knitr::include_graphics('standard-vertical-black.png')
+```
+
+
 Reference a figure by its code chunk label with the `fig:` prefix. For example, Figure `\@ref(fig:nice-fig)` renders as Figure \@ref(fig:nice-fig).
 
 ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
@@ -69,7 +83,7 @@ renders as:
 
 You may refer to it using `\@ref(eq:binom)` which renders as \@ref(eq:binom).
 
-Please make sure equations \index{equations} without labels are not numbered by either using the `equation*` environment or adding `\nonumber` or `\notag` to your equations. The same rules apply to other math environments. For aligning multiple equations, `align` is the preferred environment. For example:\index{align}    
+Please make sure equations \index{equations} without labels are not numbered by either using the `equation*` environment or adding `\nonumber` or `\notag` to your equations. The same rules apply to other math environments. For aligning multiple equations, `align` is the preferred environment. For example: \index{align}    
 
 ````
 \begin{align} 
@@ -139,7 +153,13 @@ renders as
 
 We can reference the example by its code chunk label with the `exm:` prefix. For example, Example `\@ref(exm:eg1)` renders as Example \@ref(exm:eg1). 
 
-There are also `theorem`, `lemma`, etc. environments. Full details can be found [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html).
+There are also `theorem`, `lemma`, etc. environments. Full details can be found [here](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html); here's one theorem as an example.
+
+``` {theorem, #pythag, name="Pythagorean Theorem"}
+In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of
+the other two sides.
+```
+
 
 You can also create blocks of text using the simple `>` without the need for a chunk.  For example, 
 
