@@ -466,16 +466,14 @@ knitr::include_app("https://lindesaysh.shinyapps.io/faithfulshiny/", height='600
 
 ## TikZ
 
-It's possible to build TikZ from bookdown, but getting it to work is non-trivial:
-you need to install (at least) the following packages via the R console:
+It's possible to build TikZ from bookdown, but getting it to work is non-trivial: you need to install (at least) the following packages via the R console:
 
 ```
 install.packages("magick")
 install.packages("pdftools")
 ```
 
-both of which may require external dependencies to be installed; this seems to vary a lot between systems
-and if you need help with a particular system, please get in touch (fls3@).
+both of which may require external dependencies to be installed; this seems to vary a lot between systems and if you need help with a particular system, please get in touch (fls3@).
 
 Commutative diagrams work:
 ```{r, echo=FALSE, out.width="30%", engine='tikz', fig.ext=if (knitr:::is_latex_output()) 'pdf' else 'png', fig.align='center', fig.alt='A commutative diagram for the first isomorphism theorem', fig.cap="The First Isomorphism Theorem"}
@@ -534,11 +532,8 @@ And so does `tikzpicture` with nodes, arrows, and so on.
 \node (G2) at (-0.25, -1.5) {$\beta$};
 \end{tikzpicture}
 ```
-Since these TikZ diagrams are converted to images, you must ensure that alt-text is provided
-for them. You should also ensure that the text surrounding the image adequately explains
-what the image conveys.
+
+Since these TikZ diagrams are converted to images, you must ensure that alt-text is provided for them. You should also ensure that the text surrounding the image adequately explains what the image conveys.
 
 
-It doesn't seem to be possible to get `pgfplots` to work, so you may need to produce each plot
-manually and then include them as a figure like above. You may also wish to consider producing your
-plots in `R` using (e.g.) the library `ggplot2`.
+It doesn't seem to be possible to get `pgfplots` to work, so you may need to produce each plot manually and then include them as a figure like above. You may also wish to consider producing your plots in `R` using (e.g.) the library `ggplot2`.
