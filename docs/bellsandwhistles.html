@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en-GB" xml:lang="en-GB">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Bells and Whistles | MTXXXX: Some stats</title>
+  <meta name="description" content="This is an example gitbook with some St Andrews styling." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Bells and Whistles | MTXXXX: Some stats" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is an example gitbook with some St Andrews styling." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Bells and Whistles | MTXXXX: Some stats" />
+  
+  <meta name="twitter:description" content="This is an example gitbook with some St Andrews styling." />
+  
+
+<meta name="author" content="L. Scott-Hayward and JJ Valletta" />
+
+
+<meta name="date" content="2022-01-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="final-words.html"/>
+<script src="book_assets/header-attrs-2.11/header-attrs.js"></script>
+<script src="book_assets/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="book_assets/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="book_assets/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="book_assets/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="book_assets/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script language="javascript">
+    function toggle(id) {
+        var ele = document.getElementById("toggleText" + id);
+        var text = document.getElementById("displayText" + id);
+        var buttonText = text.innerHTML.replace("Show ", "");
+        buttonText = buttonText.replace("Hide ", "");
+        if(ele.style.display == "block") {
+            ele.style.display = "none";
+            text.innerHTML = "Show " + buttonText;
+        } else {
+            ele.style.display = "block";
+            text.innerHTML = "Hide " + buttonText;
+        }
+    }
+</script>
+
+<script language="javascript">
+    function openCode(evt, codeName, id) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent" + id);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks" + id);
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(codeName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<script language="javascript">
+    function hide(id){
+        document.getElementById(id).style.display = "none";
+    }
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.st-andrews.ac.uk/mathematics-statistics/"><img src="standard-vertical-black.png" width="180" alt="University of St Andrews Logo"></a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#learning-outcomes"><i class="fa fa-check"></i>Learning outcomes</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recommended-reading"><i class="fa fa-check"></i>Recommended reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#data-files"><i class="fa fa-check"></i>Data files</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assessment"><i class="fa fa-check"></i>Assessment</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#lateness-policy"><i class="fa fa-check"></i>Lateness policy</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#work-submitted-late-for-good-reason"><i class="fa fa-check"></i>Work submitted late for good reason</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#figures-and-tables"><i class="fa fa-check"></i><b>1.1</b> Figures and Tables</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#equations"><i class="fa fa-check"></i><b>1.2</b> Equations</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#examples"><i class="fa fa-check"></i><b>1.3</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html"><i class="fa fa-check"></i><b>2</b> Bells and Whistles</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#task-and-solution-block"><i class="fa fa-check"></i><b>2.1</b> Task and solution block</a></li>
+<li class="chapter" data-level="2.2" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#different-task-and-solution-titles"><i class="fa fa-check"></i><b>2.2</b> Different task and solution titles</a></li>
+<li class="chapter" data-level="2.3" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#two-tabbed-solution"><i class="fa fa-check"></i><b>2.3</b> Two-tabbed solution</a></li>
+<li class="chapter" data-level="2.4" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#multi-tabbed-options"><i class="fa fa-check"></i><b>2.4</b> Multi-tabbed options</a></li>
+<li class="chapter" data-level="2.5" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#task-with-held-solutions"><i class="fa fa-check"></i><b>2.5</b> Task with held solutions</a></li>
+<li class="chapter" data-level="2.6" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#adding-boxes"><i class="fa fa-check"></i><b>2.6</b> Adding Boxes</a></li>
+<li class="chapter" data-level="2.7" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#shiny-apps-and-html-widgets"><i class="fa fa-check"></i><b>2.7</b> Shiny apps and HTML widgets</a></li>
+<li class="chapter" data-level="2.8" data-path="bellsandwhistles.html"><a href="bellsandwhistles.html#tikz"><i class="fa fa-check"></i><b>2.8</b> TikZ</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>3</b> Final Words</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="final-words.html"><a href="final-words.html#what-are-all-these-files-for"><i class="fa fa-check"></i><b>3.1</b> What are all these files for?</a>
+<ul>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html#markdown-files"><i class="fa fa-check"></i>Markdown files</a></li>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html#yaml-files"><i class="fa fa-check"></i>YAML files</a></li>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html#latex-files"><i class="fa fa-check"></i>LaTeX files</a></li>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html#bibliography-files"><i class="fa fa-check"></i>Bibliography files</a></li>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html#web-files"><i class="fa fa-check"></i>Web files</a></li>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html#hidden-files"><i class="fa fa-check"></i>Hidden files</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="final-words.html"><a href="final-words.html#publish-book-on-moodle"><i class="fa fa-check"></i><b>3.2</b> Publish book on Moodle</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MTXXXX: Some stats</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bellsandwhistles" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Bells and Whistles</h1>
+<p>Chapter <a href="intro.html#intro">1</a> briefly introduces the basic features of R Markdown and bookdown. For full details please refer to:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a></li>
+<li><a href="https://bookdown.org/yihui/bookdown/">bookdown: Authoring Books and Technical Documents with R Markdown</a></li>
+</ul>
+<p>In this Chapter we are going to introduce <em>extra</em> features/environments, some of which will only work when using the St Andrews template. Big thanks to <a href="https://github.com/tjmckinley/RtutorialSkeleton">TJ McKinley</a> for sharing with us the code for the task and solution features.</p>
+<div id="task-and-solution-block" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Task and solution block</h2>
+<p>The <code>task</code> block can be used to set exercises for the students. The <code>solution</code> block reveals the answer to the student (if enabled; more on that later). For the gitbook/HTML version
+there is a toggle button <code>Show Solution</code> that reveals the answer. In the PDF version, there is a hyperlink to take the reader to the solutions, which are in the appendix. There is also a link to get back to the place in the text from the appendix.</p>
+<p>The <code>task</code> block is used as follows. For example:</p>
+<pre><code>```{task}
+Here is a task written in **markdown**.
+```</code></pre>
+<p>which renders as:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+Here is a task written in <strong>markdown</strong>.
+</div>
+</div>
+<p>You can include chunks within the <code>task</code> chunk, but you need to use double backticks <em>within</em> the chunk, and leave carriage returns around the internal chunk. For example:</p>
+<pre><code>
+```{task}
+
+``{r}
+x &lt;- 2 + 2
+x
+``
+
+```
+</code></pre>
+<p>which renders as:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="bellsandwhistles.html#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb14-2"><a href="bellsandwhistles.html#cb14-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+</div>
+<p>Be careful to have suitable carriage returns around e.g. <code>enumerate</code> or <code>itemize</code> environments inside the chunk also. For example:</p>
+<pre><code>
+```{task}
+Here is a list:
+1. item 1
+2. item 2
+```
+</code></pre>
+<p>will not render nicely. But</p>
+<pre><code>
+```{task}
+Here is a list:
+
+1. item 1
+2. item 2
+
+```
+</code></pre>
+<p>will:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+<p>Here is a list:</p>
+<ol style="list-style-type: decimal">
+<li>item 1</li>
+<li>item 2
+</div>
+</div></li>
+</ol>
+<p>The <code>solution</code> chunk works in the same way, and the numbers will follow the previous <code>task</code> chunk (so you can set tasks without solutions). For example:</p>
+<pre><code>
+```{task}
+Add 2 and 2 together
+```
+
+```{solution}
+
+``{r}
+2 + 2
+``
+
+```
+</code></pre>
+<p>gives:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+Add 2 and 2 together
+</div>
+</div>
+<button id="displayTextunnamed-chunk-8" onclick="javascript:toggle(&#39;unnamed-chunk-8&#39;);">
+Show Solution
+</button>
+<div id="toggleTextunnamed-chunk-8" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution
+</div>
+<div class="panel-body">
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="bellsandwhistles.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="different-task-and-solution-titles" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Different task and solution titles</h2>
+<p><code>task</code> and <code>solution</code> boxes can be given different names using the <code>title</code> option (these can be set globally if preferred). For example:</p>
+<pre><code>
+```{task, title = &quot;Question&quot;}
+Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
+```
+
+```{solution, title = &quot;Answer&quot;}
+
+``{r}
+plot(hp ~ mpg, data = mtcars, 
+  pch=19, col=&#39;darkgrey&#39;)
+``
+
+```
+</code></pre>
+<p>renders as:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Question
+</div>
+<div class="panel-body">
+Produce a scatterplot of <code>mpg</code> against <code>hp</code>. What does the relationship look like?
+</div>
+</div>
+<button id="displayTextunnamed-chunk-10" onclick="javascript:toggle(&#39;unnamed-chunk-10&#39;);">
+Show Answer
+</button>
+<div id="toggleTextunnamed-chunk-10" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Answer
+</div>
+<div class="panel-body">
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="bellsandwhistles.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hp <span class="sc">~</span> mpg, <span class="at">data =</span> mtcars, </span>
+<span id="cb22-2"><a href="bellsandwhistles.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">&#39;darkgrey&#39;</span>)</span></code></pre></div>
+<p><img src="StAndrewsTemplate_files/figure-html/unnamed-chunk-26-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="two-tabbed-solution" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Two-tabbed solution</h2>
+<p>You can have a task with <strong>two</strong> different solutions side-by-side, using the <code>multCode = T</code> option to the solution box. For example, you may want to show a solution using both base <code>R</code> and <code>tidyverse</code>. Here the two tabs are separated by four consecutive hashes: <code>####</code>, and the <code>titles</code> option gives the tab titles (these can be set globally if preferred). For example:</p>
+<pre><code>
+```{task}
+Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
+```
+
+```{solution, multCode=T, titles = c(&quot;Base R&quot;, &quot;tidyverse&quot;)}
+
+``{r, fig.height=6, fig.width=6, out.width = &quot;60%&quot;}
+plot(hp ~ mpg, data = mtcars,
+     pch=19, col=&#39;darkgrey&#39;)
+``
+
+The plot suggests that a linear relationship might exist between the two variables. 
+So we can proceed by fitting a linear model in R.
+
+####
+
+``{r, fig.height=6, fig.width=6, out.width = &quot;60%&quot;}
+ggplot(mtcars) +
+    geom_point(aes(x = mpg, y = hp))
+``
+
+The plot suggests that a linear relationship might exist between the two variables. 
+So we can proceed by fitting a linear model in R.
+    
+```</code></pre>
+<p>will render as:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task
+</div>
+<div class="panel-body">
+Produce a scatterplot of <code>mpg</code> against <code>hp</code>. What does the relationship look like?
+</div>
+</div>
+<button id="displayTextunnamed-chunk-13" onclick="javascript:toggle(&#39;unnamed-chunk-13&#39;);">
+Show Solution
+</button>
+<div id="toggleTextunnamed-chunk-13" style="display: none">
+<div class="panel panel-default">
+<div class="panel-heading panel-heading1">
+Solution
+</div>
+<div class="panel-body">
+<div class="tab">
+<button class="tablinksunnamed-chunk-13 active" onclick="javascript:openCode(event, &#39;option1unnamed-chunk-13&#39;, &#39;unnamed-chunk-13&#39;);">
+Base R
+</button>
+<button class="tablinksunnamed-chunk-13" onclick="javascript:openCode(event, &#39;option2unnamed-chunk-13&#39;, &#39;unnamed-chunk-13&#39;);">
+tidyverse
+</button>
+</div>
+<div id="option1unnamed-chunk-13" class="tabcontentunnamed-chunk-13">
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="bellsandwhistles.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hp <span class="sc">~</span> mpg, <span class="at">data =</span> mtcars,</span>
+<span id="cb24-2"><a href="bellsandwhistles.html#cb24-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch=</span><span class="dv">19</span>, <span class="at">col=</span><span class="st">&#39;darkgrey&#39;</span>)</span></code></pre></div>
+<p><img src="StAndrewsTemplate_files/figure-html/unnamed-chunk-27-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The plot suggests that a linear relationship might exist between the two variables.
+So we can proceed by fitting a linear model in R.</p>
+</div>
+<div id="option2unnamed-chunk-13" class="tabcontentunnamed-chunk-13">
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="bellsandwhistles.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="bellsandwhistles.html#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> hp))</span></code></pre></div>
+<p><img src="StAndrewsTemplate_files/figure-html/unnamed-chunk-28-1.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>The plot suggests that a linear relationship might exist between the two variables.
+So we can proceed by fitting a linear model in R.</p>
+</div>
+<script> javascript:hide('option2unnamed-chunk-13') </script>
+</div>
+</div>
+</div>
+</div>
+<div id="multi-tabbed-options" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Multi-tabbed options</h2>
+<p>You can also have just the multicode part (not embedded within the solution panel.). These appear side-by-side in the PDF document. Note that currently you can only have <strong>two</strong> tabs. For example:</p>
+<pre><code>
+```{multCode, titles=c(&#39;Part A&#39;, &#39;Part B&#39;)}
+
+Two options: 
+
+* Option 1 - This is some text for part A
+
+####
+
+Two options:
+    
+* Option 2 - This is some text for part B
+
+```
+</code></pre>
+<p>will typeset to:</p>
+<div class="tab">
+<button class="tablinksunnamed-chunk-14 active" onclick="javascript:openCode(event, &#39;option1unnamed-chunk-14&#39;, &#39;unnamed-chunk-14&#39;);">
+Part A
+</button>
+<button class="tablinksunnamed-chunk-14" onclick="javascript:openCode(event, &#39;option2unnamed-chunk-14&#39;, &#39;unnamed-chunk-14&#39;);">
+Part B
+</button>
+</div>
+<div id="option1unnamed-chunk-14" class="tabcontentunnamed-chunk-14">
+<p>Two options:</p>
+<ul>
+<li>Option 1 - This is some text for part A</li>
+</ul>
+</div>
+<div id="option2unnamed-chunk-14" class="tabcontentunnamed-chunk-14">
+<p>Two options:</p>
+<ul>
+<li>Option 2 - This is some text for part B</li>
+</ul>
+</div>
+<script> javascript:hide('option2unnamed-chunk-14') </script>
+</div>
+<div id="task-with-held-solutions" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Task with held solutions</h2>
+<p>In the solution chunk header, if <code>renderSol=FALSE</code> then the solutions are not rendered as part of the book. For example:</p>
+<pre><code>
+```{task, title=&#39;Task (solution hidden)&#39;}
+Produce a scatterplot of `mpg` against `hp`. What does the relationship look like?
+```
+
+```{solution, renderSol=FALSE}
+
+``{r}
+plot(hp ~ mpg, data = mtcars, 
+  pch=19, col=&#39;darkgrey&#39;)
+``
+
+This is my solution which you will only see if `renderSol` is set to `TRUE`.
+
+```
+</code></pre>
+<p>will render as:</p>
+<div class="panel panel-default">
+<div class="panel-heading">
+Task (solution hidden)
+</div>
+<div class="panel-body">
+Produce a scatterplot of <code>mpg</code> against <code>hp</code>. What does the relationship look like?
+</div>
+</div>
+<p>By default, in <code>_setup.Rmd</code>, <code>renderSol</code> is set to <code>TRUE</code>. If one of your chapters is a tutorial/practical, and you want to release the answers later on in the course,
+it can become tedious having to set <code>renderSol</code> to <code>FALSE</code> for every question.
+Instead, you can override this default at the beginning of each chapter, so you can turn on/off the solutions, as follows:</p>
+<pre><code>
+``{r, include=F}
+opts_chunk$set(renderSol=FALSE)
+``
+</code></pre>
+<p><strong>Note</strong> that the chunk above changes everything after the chunk, so later chapters will retain this change unless you reset it.</p>
+</div>
+<div id="adding-boxes" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Adding Boxes</h2>
+<p>Sometimes you may wish to add a box section to your notes. There are currently three different coloured boxes defined; green and blue with white backgrounds and blue with pale blue background. For example,</p>
+<pre><code>:::: {.greenbox data-latex=&quot;&quot;}
+This is an example of a green box.
+::::
+
+:::: {.bluebox data-latex=&quot;&quot;}
+This is an example of a blue box.
+::::
+
+:::: {.palebluebox data-latex=&quot;&quot;}
+This is an example of a blue box with pale blue background.
+::::</code></pre>
+<p>will render as:</p>
+<div class="greenbox">
+<p>This is an example of a green box.</p>
+</div>
+<div class="bluebox">
+<p>This is an example of a blue box.</p>
+</div>
+<div class="palebluebox">
+<p>This is an example of a blue box with pale blue background.</p>
+</div>
+<p>You can also give your box a title. You can use <code>:::</code> to denote a separate section inside the box:</p>
+<pre><code>:::: {.palebluebox data-latex=&quot;&quot;}
+::: {.center data-latex=&quot;&quot;}
+**This is my title**
+:::
+
+This is the contents of my box.
+
+::::
+</code></pre>
+<p>renders as</p>
+<div class="palebluebox">
+<div class="center">
+<p><strong>This is my title</strong></p>
+</div>
+<p>This is the contents of my box.</p>
+</div>
+<p>You can add equations, figures, r-code etc to your boxes. For example:</p>
+<pre><code>:::: {.greenbox data-latex=&quot;&quot;}
+::: {.center data-latex=&quot;&quot;}
+**Things you can include**
+:::
+
+Equations: 
+$$y = \beta_0 + \beta_1X$$
+
+R-code:
+
+```r
+1+1
+```
+
+Figures:
+
+
+Formatting:
+
++ **bold**
++ *italic*
+    a) sub bullets
+
+::::</code></pre>
+<p>will render as:</p>
+<div class="greenbox">
+<div class="center">
+<p><strong>Things you can include</strong></p>
+</div>
+<p>Equations:</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1X\]</span>
+R-code:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="bellsandwhistles.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Figures:</p>
+<p><img src="standard-vertical-black.png" width="10%" style="display: block; margin: auto;" /></p>
+<p>Formatting:</p>
+<ul>
+<li><strong>bold</strong></li>
+<li><em>italic</em>
+<ol style="list-style-type: lower-alpha">
+<li>sub bullets</li>
+</ol></li>
+</ul>
+</div>
+<p>The colour scheme for the boxes is defined in the following files:</p>
+<ul>
+<li><code>style.css</code>. For html output, see the section “Create colour scheme for boxes”</li>
+<li><code>preamble.tex</code>. For pdf output, see the section “LaTeX to create coloured boxes”</li>
+</ul>
+<p>For more information on these boxes and other custom blocks have a look at <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">this section</a> of the R-Markdown Cookbook.</p>
+</div>
+<div id="shiny-apps-and-html-widgets" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Shiny apps and HTML widgets</h2>
+<p>You can add <a href="https://bookdown.org/yihui/bookdown/web-pages-and-shiny-apps.html">Shiny apps</a> and <a href="https://bookdown.org/yihui/bookdown/html-widgets.html">HTML widgets</a> to your book.</p>
+<p>For example, using the <code>knitr::include_app(...)</code> function we can embed a Shiny app that is hosted somewhere else.
+Note that this app renders as an interactive panel in the web book and a static screenshot in the PDF. For the PDF image to work properly, make sure you include <code>dev='png'</code> in the chunk header. You can then click on either the image or the link in the caption to live view the app.</p>
+<pre><code>``{r myshiny, echo=FALSE, screenshot.opts=list(delay=3), dev=&#39;png&#39;,fig.cap=&#39;An example of a shiny app. You can see a live version <a href="https://lindesaysh.shinyapps.io/faithfulshiny/">here</a>&#39;}
+knitr::include_app(&quot;https://lindesaysh.shinyapps.io/faithfulshiny/&quot;, height=&#39;600px&#39;)
+``</code></pre>
+<p>renders as</p>
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:myshiny"></span>
+<iframe src="https://lindesaysh.shinyapps.io/faithfulshiny/?showcase=0" width="480" height="600px" data-external="1">
+</iframe>
+<p class="caption">
+Figure 2.1: An example of a shiny app. You can see a live version <a href="https://lindesaysh.shinyapps.io/faithfulshiny/">here</a>
+</p>
+</div>
+</div>
+<div id="tikz" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> TikZ</h2>
+<p>It’s possible to build TikZ from bookdown, but getting it to work is non-trivial: you need to install (at least) the following packages via the R console:</p>
+<pre><code>install.packages(&quot;magick&quot;)
+install.packages(&quot;pdftools&quot;)</code></pre>
+<p>both of which may require external dependencies to be installed; this seems to vary a lot between systems and if you need help with a particular system, please get in touch (fls3@).</p>
+Commutative diagrams work:
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<img src="StAndrewsTemplate_files/figure-html/unnamed-chunk-21-1.png" alt="A commutative diagram for the first isomorphism theorem" width="30%" />
+<p class="caption">
+Figure 2.2: The First Isomorphism Theorem
+</p>
+</div>
+<p>And so does <code>tikzpicture</code> with nodes, arrows, and so on.</p>
+<p><img src="StAndrewsTemplate_files/figure-html/unnamed-chunk-22-1.png" title="Two partitions of [-n .. -1] union [1 ..n], represented as digraphs, with the negative points of the first and positive points of the second overlayed onto each other" alt="Two partitions of [-n .. -1] union [1 ..n], represented as digraphs, with the negative points of the first and positive points of the second overlayed onto each other" width="60%" style="display: block; margin: auto;" /></p>
+<p>Since these TikZ diagrams are converted to images, you must ensure that alt-text is provided for them. You should also ensure that the text surrounding the image adequately explains what the image conveys.</p>
+<p>It doesn’t seem to be possible to get <code>pgfplots</code> to work, so you may need to produce each plot manually and then include them as a figure like above. You may also wish to consider producing your plots in <code>R</code> using (e.g.) the library <code>ggplot2</code>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="final-words.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="book_assets/gitbook-2.6.7/js/app.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="book_assets/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["StAndrewsTemplate.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
